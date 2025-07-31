@@ -1,5 +1,5 @@
 ---
-name: Eshaan
+name: Eshaan Sharma
 role: Teaching Assistant
 email: eshaan.sharma@research.iiit.ac.in
 website:

@@ -2,25 +2,25 @@
 title: Persistence
 ---
 
-Oct 24 2025
+Oct 24
 : [Hard Disks](#)
 
-Oct 25 2025
+Oct 25
 : **Tutorial 8**{: .label .label-green }
 
-Oct 28 2025
+Oct 28
 : **Quiz 2**{: .label .label-purple } [Quiz 2: Includes everything covered from the mid sem until previous lecture](#)
 
-Nov 1 2025
+Nov 1
 : **Tutorial 9**{: .label .label-green }
 
-Nov 7 2025
+Nov 7
 : [RAIDS and RAID Levels](#)
 
-Nov 11 2025
+Nov 11
 : [Files and Directories](#)
 
-Nov 14 2025
+Nov 14
 : [File System Implementation](#)
 
 
