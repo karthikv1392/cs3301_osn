@@ -10,4 +10,6 @@ Let's explore OSN together
 
 TA Hours: 
 - TBD
-- Location: TBD 
+- Location: TBD
+
+<!-- Updated for GitHub Pages --> 
