@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Assignment 0k
+title: Assignment 0
 permalink: /mini-projects/assignment0
 parent: Mini Projects
 nav_order: 1
