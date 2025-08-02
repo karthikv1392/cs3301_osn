@@ -12,7 +12,7 @@ A system call is a routine that allows a user application to request actions tha
 
 ## GitHub Classroom
 
-For this project, follow [this link](https://classroom.github.com/a/WVXI1UQX) to accept the assignment. You should find a list of roll numbers already available as soon as you click on the link, ensure that you select your roll number correctly as that will mapped to your github id throughout the course. 
+For this project, check moodle to accept the assignment. You should find a list of roll numbers already available as soon as you click on the link, ensure that you select your roll number correctly as that will mapped to your github id throughout the course. 
 You will then be assigned a private repository on GitHub. This is where you will be working on the assignment. All relevant instructions regarding this assignment can be found below.   
 
 > **Note:** If you are not familiar with git, please go through the [git tutorial](https://rogerdudler.github.io/git-guide/) before proceeding.  
