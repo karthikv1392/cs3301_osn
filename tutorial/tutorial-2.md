@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Tutorial 2 - Introduction to System Calls
+title: Tutorial 2 - Networks
 permalink: /tutorial/tutorial-2
 parent: Tutorials
 nav_order: 2
