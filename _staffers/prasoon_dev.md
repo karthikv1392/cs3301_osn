@@ -9,5 +9,5 @@ photo: Prasoon_dev.jpeg
 Let's explore OSN together
 
 TA Hours: 
-- Friday: 10:00-11:00
+- Friday: 16:00-17:00
 - Location: iREL, KCIS 2nd Floor
