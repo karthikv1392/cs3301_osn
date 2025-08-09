@@ -10,4 +10,4 @@ Mail 24 hours prior with your doubt
 
 TA Hours: 
 - Saturday: 14:00-15:00
-- Location: CVIT, KCIS 2nd Floor
+- Location: CVIT, KCIS 3rd Floor

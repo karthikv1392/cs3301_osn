@@ -6,7 +6,7 @@ website:
 photo: Prasoon_dev.jpeg
 ---
 
-Let's explore OSN together
+Mail 24 hours prior with your doubt
 
 TA Hours: 
 - Friday: 16:00-17:00
