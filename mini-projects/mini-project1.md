@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Assignment 0
-permalink: /mini-projects/assignment0
+title: Mini Project 1
+permalink: /mini-projects/mini-project1
 parent: Mini Projects
 nav_order: 1
 ---
