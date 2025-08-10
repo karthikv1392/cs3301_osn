@@ -9,29 +9,33 @@ nav_order: 1
 # Before You Start
 
 ## Deadline
+
 The deadline for this assignment is **Thursday, September 11, 2025 23:59:59 IST**.
 
 ## Grading
 
 Marks are divided into 2 categories
+
 - **I/O Evaluation**
-	- This component will be **automatically evaluated**.
-	- Your shell will be tested on a common testing environment.
-	- This will be done in a similar manner to how OJ worked in CPro and DSA.
+  - This component will be **automatically evaluated**.
+  - Your shell will be tested on a common testing environment.
+  - This will be done in a similar manner to how OJ worked in CPro and DSA.
 - **Code Evaluation**
-	- This component will be **manually evaluated**.
-	- Your code and understanding will be evaluated by TAs during an in-person viva.
+  - This component will be **manually evaluated**.
+  - Your code and understanding will be evaluated by TAs during an in-person viva.
 
 If you are using LLMs for any portion of the code,
+
 - Enclose the LLM generated portion as below,
-	```
-	############## LLM Generated Code Begins ##############
-	some llm generated code
-	############## LLM Generated Code Ends ################
-	```
+  ```
+  ############## LLM Generated Code Begins ##############
+  some llm generated code
+  ############## LLM Generated Code Ends ################
+  ```
 - Provide the exact prompts and LLM responses as image files in a folder called `llm_completions/`
 
 ## Notes Regarding Grading
+
 - In the in-person code evaluation, you will be tested **solely on the understanding of your code**.
 - The exact weightage will be released shortly, but note that the in-person code evaluation **will hold more weightage** than the automated evaluation.
 - Since evaluation of the correctness of your code will be automatically evaluated, **you must ensure that your shell strictly follows the input and output requirements mentioned in this document**.
@@ -39,6 +43,7 @@ If you are using LLMs for any portion of the code,
 - A sample testing script will be released shortly that will contain sample test cases that you may use to check whether your shell follows the specified input/output format. Note that these test cases are **a small subset of the ones used in the automatic evaluation**.
 
 ## Notes Regarding Queries
+
 - Before asking a doubt please thoroughly read through the requirements.
 - If a doubt is already answered by the requirements, it **will not be answered.**
 - You may only ask doubts regarding input/output formats.
@@ -51,8 +56,8 @@ If you are using LLMs for any portion of the code,
 - The project must be broken down into multiple .c and .h files based on functionality. Monolithic code in a single file will be heavily penalized.
 - You may only use the C POSIX library headers and functions. The documentation for these are provided here - https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html.
 - Use the below `gcc` feature flags while compiling to ensure POSIX compliance.
-	```
-	gcc -std=c99 \
+  ```
+  gcc -std=c99 \
     -D_POSIX_C_SOURCE=200809L \
     -D_XOPEN_SOURCE=700 \
     -Wall -Wextra -Werror \
@@ -60,7 +65,7 @@ If you are using LLMs for any portion of the code,
     -fno-gnu-keywords \
     -fno-asm \
     your_file.c
-	```
+  ```
 - Your final code submission **must** be compilable using the command `make all` in the root directory of the git repository. It **must** compile the shell to the file `shell.out`. If not done, this would cause automatic evaluation to fail, leading to zero marks. A test script will be provided soon.
 
 ## Part A: Shell Input \[Total: 65\]
@@ -83,6 +88,7 @@ Find out what Username and SystemName are by investigating the bash (or zsh, etc
 4. When the current working directory does not have the home directory as an ancestor (for example `/path/to/not_home/meow`) the absolute path should be displayed as is. So the example would be displayed as `/path/to/not_home/meow`.
 
 #### Example
+
 ```
 # I am currently running bash
 [rudy@iiit ~/osnmp1/]$ make
@@ -102,6 +108,7 @@ A shell's job is to take input from a user, parse it, and then run any commands 
 3. After consuming the input, the shell should once again display the shell prompt. The user should again be able to type input and submit it (by pressing the enter/return key).
 
 #### Example
+
 ```
 <rudy@iiit:~> Hi there guys!
 <rudy@iiit:~> This shell is cool!
@@ -124,6 +131,7 @@ name -> r"[^|&><;]+"
 A simple introduction to Context Free Grammars and an example parser for a simpler grammar will be provided in the tutorial.
 
 Parsers for such programs usually create something called an Abstract Syntax Tree. However, you are not required to parse the input into an AST. You can use any structure that you find the most convenient!
+
 #### Requirements
 
 1. The shell should verify whether or not an inputted command is valid or invalid using the rules of the grammar.
@@ -132,6 +140,7 @@ Parsers for such programs usually create something called an Abstract Syntax Tre
 4. Your parser should ignore whitespace characters (space, tab (\t), new line (\n), and carriage return (\r)) in between valid tokens.
 
 #### Example
+
 ```
 # This is valid syntax
 <rudy@iiit:~> Hi there guys!
@@ -164,6 +173,7 @@ Execute one of the following operations sequentially for each passed argument:
 5. "name": Change the CWD to the specified relative or absolute path.
 
 #### Example
+
 ```
 <rudy@iiit:~> hop ~
 <rudy@iiit:~> hop ..
@@ -187,9 +197,10 @@ Flags modify the default behavior of reveal.
 4. When neither flag is set, print files and directories in the format of `ls`.
 5. The argument passed invokes identical behavior to hop, except that here we are listing directory contents instead of changing the CWD.
 6. Ensure that the files are always listed in lexicographic order.
-Note that you are **not** required to implement the format of `ls -l`. (In fact if you do you may lose marks due to the automated evaluation!)
+   Note that you are **not** required to implement the format of `ls -l`. (In fact if you do you may lose marks due to the automated evaluation!)
 
 #### Example
+
 ```
 <rudy@iiit:~> reveal ~
 osnmp1
@@ -233,11 +244,12 @@ README.md
 4. Always store the entire `shell_cmd` as defined in the CFG.
 5. Do not store any `shell_cmd` if the command name of an atomic command is log itself.
 6. The command exhibits three behaviors:
-    - No arguments: Print the stored commands in order of oldest to newest.
-    - `purge`: Clear the history.
-    - `execute <index>`: Execute the command at the given index (one-indexed, indexed in order of newest to oldest). Do not store the executed command.
+   - No arguments: Print the stored commands in order of oldest to newest.
+   - `purge`: Clear the history.
+   - `execute <index>`: Execute the command at the given index (one-indexed, indexed in order of newest to oldest). Do not store the executed command.
 
 #### Example
+
 ```
 <rudy@iiit:~> reveal ~
 osnmp1
@@ -352,6 +364,7 @@ For this part, you will implement I/O redirection and command piping. When proce
 **Purpose**: The activities command lists all processes spawned by the shell that are still running or stopped.
 
 #### Requirements
+
 1. The command must display each process in the format: `[pid] : command_name - State`
 2. The command must sort the output lexicographically by command name before printing.
 3. The command must remove processes from the list once they have terminated.
@@ -419,13 +432,15 @@ For this part, you will implement I/O redirection and command piping. When proce
 6. Only stopped jobs can be resumed with bg; running jobs must produce "Job already running"
 
 # Networking [Total 80]
+
 **Objective:** In this part of the mini-project you will be building upon the the unreliable UDP protocol to improve upon its reliability and you will be simulating several core TCP functionalities from scratch. This section is designed to make you familiar with socket programming, TCP and UDP protocols, supporting both file transfer and real-time chat.
 
-  
-
 ### 1. Core Functionalities
+
 #### 1.1 S.H.A.M. Packet Structure [5]
+
 All communication must occur via UDP datagrams. The payload of each datagram will be a **S.H.A.M.** packet, which you must define using a `struct`. This header must precede any application data.
+
 ```C
 
 // Recommended S.H.A.M. Header Structure
@@ -458,15 +473,9 @@ uint16_t window_size; // Flow control window size
 
 - **Window Size (`window_size`):** A 16-bit field for flow control. It specifies the number of data bytes the sender of this packet is willing to accept.
 
-  
-
 #### 1.2 Connection Management [10]
 
-  
-
 Your protocol must establish and terminate connections gracefully.
-
-  
 
 - **Three-Way Handshake (Establishment):**
 
@@ -486,8 +495,6 @@ Your protocol must establish and terminate connections gracefully.
 
 4. **Initiator -> Other Side:** Responds with a final `ACK`.
 
-  
-
 #### 1.3 Data Sequencing and Retransmission[25]
 
 - **Data Segmentation:** The sender must read a file (or user input) and break it into fixed-size chunks (1024 bytes). Each chunk is the payload for a **S.H.A.M.** packet.
@@ -497,6 +504,7 @@ Your protocol must establish and terminate connections gracefully.
 - **Cumulative ACKs:** The receiver should send an `ACK` for the highest in-order sequence number received. For example, if packets 1, 2, and 4 arrive, the receiver sends `ACK` for sequence 3 (since it's expecting packet 3 next). It should buffer packet 4.
 
 - **Retransmission Timeout (RTO):** The sender must maintain a timer for each packet sent. If an `ACK` for a given packet is not received within a timeout period (e.g., 500ms), the packet must be retransmitted.
+
 ##### Example 1: Basic Retransmission Scenario
 
 This example demonstrates how the system recovers when a single packet is lost.
@@ -504,49 +512,39 @@ This example demonstrates how the system recovers when a single packet is lost.
 **Scenario Assumptions:**
 
 - **Sender's Sliding Window:** 4 packets
-    
 - **Packet Data Size:** 1024 bytes
-    
 - **Sequence Numbers (`SEQ`):** Byte-based
-    
 
 ---
 
-**Step 1: Initial Transmission** 
+**Step 1: Initial Transmission**
 
 The sender transmits a window of four packets and starts a timer for each one.
 
 - `SND DATA SEQ=1`
-    
-- `SND DATA SEQ=1025` <-- **This packet is lost** 
-    
+- `SND DATA SEQ=1025` <-- **This packet is lost**
 - `SND DATA SEQ=2049`
-    
 - `SND DATA SEQ=3073`
-    
 
-**Step 2: Receiver's Cumulative ACK** 
+**Step 2: Receiver's Cumulative ACK**
 
 The receiver gets packets 1, 3, and 4. Since packet 2 (`SEQ=1025`) is missing, it can only acknowledge the data it has received contiguously. It buffers packets 3 and 4.
 
 - It sends an ACK for the next byte it expects: `RCV sends: ACK=1025`
-    
 
 **Step 3: Timeout and Selective Retransmission** ⏳
 
 The sender's timer for packet 2 (`SEQ=1025`) expires. It assumes the packet was lost and retransmits **only that packet**.
 
 - `TIMEOUT SEQ=1025`
-    
 - `RETX DATA SEQ=1025`
-    
 
-**Step 4: Recovery and Final ACK** 
+**Step 4: Recovery and Final ACK**
 
 The receiver gets the retransmitted packet 2. It can now process its buffered packets (3 and 4), completing the sequence up to byte 4096.
 
 - It sends a new cumulative ACK for the entire block: `RCV sends: ACK=4097`
-    
+
 ---
 
 ##### Example 2: The Efficiency of Cumulative ACKs
@@ -560,38 +558,44 @@ This section addresses a common question about the previous scenario.
 **Explanation:** The final `ACK=4097` sent by the receiver is a **cumulative acknowledgment**. This single message efficiently informs the sender of two things:
 
 1. "I have successfully received **all data** up to and including byte 4096."
-    
 2. "I am now ready for the next piece of data, which starts at byte 4097."
-    
 
 When the sender receives this ACK, it knows that the retransmitted packet 2, as well as the originally sent packets 3 and 4, have all been successfully received. It can then cancel any running timers for those packets and continue sending new data. This prevents unnecessary retransmissions and makes the protocol highly efficient.
+
 ### 2. Flow Control[10]
+
 You must implement a basic sliding window flow control mechanism.
+
 - The receiver must always include its current available buffer space (in bytes) in the `window_size` field of every packet it sends.
 - The sender must read this `window_size` from incoming `ACK` packets.
 - The sender must ensure that the amount of unacknowledged data it has in flight (`LastByteSent` - `LastByteAcked`) is **always less than or equal to** the receiver's advertised `window_size`.
+
 ### 3. Implementation and Testing Requirements
+
 To enable quick and automated testing, your programs **must** adhere to the following specifications.
+
 #### 3.1 Command-Line Interface
+
 Your client and server must be executable with the following arguments, supporting two modes of operation.
+
 - **Server:**
-Bash
 
-```
-
+```bash
 ./server <port> [--chat] [loss_rate]
 
 ```
+
 - **Client:**
-Bash
-```
 
 # File Transfer Mode (Default)
 
+```bash
 ./client <server_ip> <server_port> <input_file> <output_file_name> [loss_rate]
+```
 
 # Chat Mode
 
+```bash
 ./client <server_ip> <server_port> --chat [loss_rate]
 
 ```
@@ -599,50 +603,56 @@ Bash
 - `--chat`: An optional flag to activate Chat Mode. When used, all file-related arguments are ignored.
 
 - `[loss_rate]`: An optional floating-point value between 0.0 and 1.0 indicating the packet loss probability. If not provided, it defaults to 0.0.
+
 #### 3.2 Mode-Specific Behavior [10]
+
 - **File Transfer Mode (Default):** After the handshake, the client sends the specified file to the server. The server receives and saves the file. This is the behavior if the `--chat` flag is **not** present.
 - **Chat Mode (`--chat`):** After the handshake, both client and server enter a loop to handle concurrent input from the keyboard (`stdin`) and the network socket. Typing `/quit` in the chat should initiate the 4-way `FIN` handshake to terminate the connection.
 - **Hint:** Use the `select()` system call to monitor both `stdin` (file descriptor 0) and your socket to handle I/O without threads.
+
 #### 3.3 Standardized Output for Verification [5]
+
 **This requirement applies to File Transfer Mode only.** Upon successfully receiving the entire file and closing the connection, the server **must** perform two actions:
+
 1. Calculate the MD5 checksum of the received file.
 2. Print the result to `stdout` in the following exact format:
+
 ```
 MD5: <32-character_lowercase_md5_hash>
 ```
+
 ##### Linux
+
 ###### Step1: Install the library
+
 1. In your terminal, run the following command to update your package lists and install the required package (`libssl-dev`):
-    
-    Bash
-    
-    ```
-    sudo apt update && sudo apt install libssl-dev
-    ```
+
+   ```bash
+   sudo apt update && sudo apt install libssl-dev
+   ```
+
 ###### Step 2: Compile Your Code Correctly
 
 Once the library is installed, you can compile your code. You **do not** need the special `-I` and `-L` flags that were required for macOS.
 
 1. **Use this simple command template** to compile your program. Replace `your_program.c` and `-o your_program` with your actual filenames.
-    
-    Bash
-    
-    ```
-    gcc your_program.c -o your_program -lcrypto
-    ```
+
+   ```bash
+   gcc your_program.c -o your_program -lcrypto
+   ```
+
 ##### MacOS
+
 ###### Step 1: Install the OpenSSL Library
 
 Now, use Homebrew to install the OpenSSL library. It's a simple, one-line command.
 
 1. In your Terminal, run:
-    
-    Bash
-    
-    ```
-    brew install openssl
-    ```
-    
+
+   ```bash
+   brew install openssl
+   ```
+
 ---
 
 ###### Step 2: Compile Your Code Correctly
@@ -650,26 +660,30 @@ Now, use Homebrew to install the OpenSSL library. It's a simple, one-line comman
 Because Homebrew installs OpenSSL in a special location, you can't just use a simple `gcc` command. You must include special flags to tell the compiler where to find the OpenSSL files.
 
 1. **Use this specific command template** to compile your program. Replace `your_program.c` and `-o your_program` with your actual filenames.
-    
-    Bash
-    
-    ```
-    gcc your_program.c -o your_program -I$(brew --prefix openssl)/include -L$(brew --prefix openssl)/lib -lcrypto
-    ```
-    
+
+   ```bash
+   gcc your_program.c -o your_program -I$(brew --prefix openssl)/include -L$(brew --prefix openssl)/lib -lcrypto
+   ```
 
 #### 3.4 Simulating Packet Loss for Testing [5]
+
 This requirement applies to both modes. The receiver must programmatically drop incoming data packets based on the optional `loss_rate` command-line argument to test retransmission logic.
+
 ### 4. Verbose Logging for Evaluation [10]
+
 To allow the evaluator to verify the internal mechanics of your protocol, you must implement a verbose logging mode that writes metadata about key events, prefixed with a high-precision timestamp, to a dedicated log file.
+
 - **Activation:** The logging mode **must** be activated by setting an environment variable `RUDP_LOG=1`. If this variable is not set, no log file should be created or written to.
 - **Log File Naming:** The log file must be named according to the program's role:
 - **Server:** `server_log.txt`
 - **Client:** `client_log.txt`
 - **Log Line Format:** Each line in the log file must start with a timestamp in `[YYYY-MM-DD HH:MM:SS.microseconds]` format, followed by the `[LOG]` prefix and the event descriptiion.
+
 #### Implementation Note:
+
 To get microsecond-level precision for your timestamps, you cannot use the standard `time()` function. You should use `gettimeofday()` from `<sys/time.h>`.
-```
+
+```c
 
 #include <stdio.h>
 #include <sys/time.h>
@@ -692,15 +706,9 @@ fprintf(log_file, "[%s.%06ld] [LOG] Your message here\n", time_buffer, tv.tv_use
 
 ```
 
-  
-
 #### Required Log Events:
 
-  
-
 Your implementation must write a timestamped log message to the designated log file for each of the following events when logging is active:
-
-  
 
 1. **Connection Handshake:**
 
@@ -738,15 +746,9 @@ Your implementation must write a timestamped log message to the designated log f
 
 - `[timestamp] [LOG] DROP DATA SEQ=<num>`
 
-  
-
 #### Example Log File Content (`server_log.txt`)
 
-  
-
 Here is a sample of what we expect to see inside the `server_log.txt` file. The program's standard output (`stdout`) should still _only_ contain the final `MD5:` line.
-
-  
 
 ```
 
@@ -775,7 +777,9 @@ Here is a sample of what we expect to see inside the `server_log.txt` file. The 
 [2025-08-03 17:38:16.011500] [LOG] RCV ACK=8501
 
 ```
+
 # xv6 [Total Marks - 140]
+
 Please attend the tutorial on xv6 to understand how to set up and get started with xv6.
 
 ## Part A - Basic System Call: getreadcount
@@ -783,6 +787,7 @@ Please attend the tutorial on xv6 to understand how to set up and get started wi
 Implement a system call that tracks and returns the total number of bytes read by the `read()` system call across all processes since boot.
 
 ### Requirements
+
 #### A.1: System Call Implementation
 
 1. Implement `sys_getreadcount()` that returns the current number of bytes read by the `read()` syscall.
@@ -819,7 +824,6 @@ Use pre-processor directives to declare the alternate scheduling policy in sched
 Edit struct proc in kernel/proc.h to add information about a process.
 Modify the allocproc() function to set up values when the process starts (see kernel/proc.h.)
 
-
 NOTE
 procdump:
 This will be useful for debugging ( refer kernel/proc.c ). It prints a list of processes to the console when a user types Ctrl-P on the console. You can modify this functionality to print the state of the running process and display the other relevant information on the console.
@@ -840,10 +844,10 @@ Your compilation process should look something like this: make clean; make qemu 
 
 1. Add a nice value for each process.
 2. Calculate the system weight based on nice value:
-    - Nice 0: weight = 1024
-    - Nice -20: weight = 88761 (highest priority)
-    - Nice 19: weight = 15 (lowest priority)
-    - Use this approximation: `weight = 1024 / (1.25 ^ nice)`
+   - Nice 0: weight = 1024
+   - Nice -20: weight = 88761 (highest priority)
+   - Nice 19: weight = 15 (lowest priority)
+   - Use this approximation: `weight = 1024 / (1.25 ^ nice)`
 
 #### B.2: Virtual Runtime Tracking [Marks 20]
 
@@ -864,7 +868,6 @@ Your compilation process should look something like this: make clean; make qemu 
 3. Enforce a minimum time slice of 3 ticks.
 4. Each process runs for its calculated time slice before being preempted.
 
-
 ## Report [Marks 20]
 
 In your implementation, add logging to print the vRuntime of all runnable processes before every scheduling decision. The log should clearly indicate:
@@ -881,28 +884,24 @@ Your log output should allow us to verify that:
 
 - vRuntime values are updating correctly after each time slice.
 
-
-
 ```
-[Scheduler Tick]  
-PID: 3 | vRuntime: 200  
-PID: 4 | vRuntime: 150  
-PID: 5 | vRuntime: 180  
+[Scheduler Tick]
+PID: 3 | vRuntime: 200
+PID: 4 | vRuntime: 150
+PID: 5 | vRuntime: 180
 --> Scheduling PID 4 (lowest vRuntime)
 ```
 
 The report also must contain brief explanation about the implementation of the specifications. A few lines about your changes for each spec is fine.
 Include the performance comparison between the default(Round Robin), FCFS and CFS scheduling policies by showing the average waiting and running times for processes. Set the processes to run on only 1 CPU for this purpose. Use the schedulertest command to get this information.
 
-
-
 # Bonus: Simplified Preemptive MLFQ Scheduler for XV6 (25 Marks)
 
 `Important`: This bonus counts towards the overall bonus for the course not particular to this assignment.
- 
+
 ### Queues & Priorities:
 
-####  Four priority queues: 0 (highest) → 3 (lowest).
+#### Four priority queues: 0 (highest) → 3 (lowest).
 
 ##### Time slices:
 
@@ -933,12 +932,12 @@ Include the performance comparison between the default(Round Robin), FCFS and CF
 - Report: Also if you've attempted this section then in the previously mentioned report add comparision for MLFQ as well.
 
 `Notes`:
+
 - "Tick" refers to the clock interrupt timer in kernel/trap.c.
 - Preemption can only occur at tick boundaries.
 
-
 ```
-./
+mini-project1/
 ├── shell/
 │   ├── src/
 │   ├── include/
