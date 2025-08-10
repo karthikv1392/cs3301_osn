@@ -587,13 +587,13 @@ Your client and server must be executable with the following arguments, supporti
 
 - **Client:**
 
-# File Transfer Mode (Default)
+###### File Transfer Mode (Default)
 
 ```bash
 ./client <server_ip> <server_port> <input_file> <output_file_name> [loss_rate]
 ```
 
-# Chat Mode
+###### Chat Mode
 
 ```bash
 ./client <server_ip> <server_port> --chat [loss_rate]
