@@ -62,7 +62,6 @@ If you are using LLMs for any portion of the code,
     -D_XOPEN_SOURCE=700 \
     -Wall -Wextra -Werror \
     -Wno-unused-parameter \
-    -fno-gnu-keywords \
     -fno-asm \
     your_file.c
   ```
