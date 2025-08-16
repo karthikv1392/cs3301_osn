@@ -6,8 +6,9 @@ website:
 photo: varun.jpg
 ---
 
-Let's explore OSN together
+Mail 24 hours prior with your doubt
 
-TA Hours: 
-- TBD
-- Location: TBD 
+TA Hours:
+
+Saturday: 14:00-15:00
+Location: iREL, KCIS 2nd Floor
