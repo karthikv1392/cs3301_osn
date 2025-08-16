@@ -10,5 +10,5 @@ Mail 24 hours prior with your doubt
 
 TA Hours:
 
-Saturday: 14:00-15:00
-Location: iREL, KCIS 2nd Floor
+- Saturday: 14:00-15:00
+- Location: iREL, KCIS 2nd Floor
