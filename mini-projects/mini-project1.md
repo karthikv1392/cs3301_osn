@@ -261,6 +261,8 @@ README.md
    - No arguments: Print the stored commands in order of oldest to newest.
    - `purge`: Clear the history.
    - `execute <index>`: Execute the command at the given index (one-indexed, indexed in order of newest to oldest). Do not store the executed command.
+  
+EDIT - I recommend implementing this command after implementing part C.1.
 
 #### Example
 
@@ -292,7 +294,11 @@ hop
 
 For this part, you will implement I/O redirection and command piping. When processing commands with sequential (`;`) or background (`&`, `&&`) operators, you should only execute the first `cmd_group` and ignore the rest for now.
 
-### C.1: Input Redirection \[50\]
+### C.1: Command Execution
+
+This part was implicitly required, and has just been added explicitly for clarity. You must allow the execution of **arbitrary comands**. This includes commands like `cat`, `echo`, `sleep`, etc. 
+
+### C.2: Input Redirection \[50\]
 
 **Syntax**: `command < filename`
 
@@ -306,7 +312,7 @@ For this part, you will implement I/O redirection and command piping. When proce
 4. The shell must close the original file descriptor after duplication to avoid file descriptor leaks.
 5. When multiple input redirections are present (e.g., `command < file1 < file2`), only the last one must take effect.
 
-### C.2: Output Redirection \[50\]
+### C.3: Output Redirection \[50\]
 
 **Syntax**: `command > filename` or `command >> filename`
 
@@ -319,7 +325,7 @@ For this part, you will implement I/O redirection and command piping. When proce
 3. When multiple output redirections are present (e.g., `command > file1 > file2`), only the last one must take effect.
 4. Input and output redirection must work together (e.g., `command < input.txt > output.txt`).
 
-### C.3: Command Piping \[100\]
+### C.4: Command Piping \[100\]
 
 **Syntax**: `command1 | command2 | ... | commandN`
 
