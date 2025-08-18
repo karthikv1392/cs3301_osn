@@ -210,7 +210,8 @@ Flags modify the default behavior of reveal.
 5. The argument passed invokes identical behavior to hop, except that here we are listing directory contents instead of changing the CWD.
 6. Ensure that the files are always listed in lexicographic order.
    Note that you are **not** required to implement the format of `ls -l`. (In fact if you do you may lose marks due to the automated evaluation!)
-7. If the directory does not exist, output "No such directory!"
+   Further note that here you must use the ASCII values of the characters to sort the names lexicographically.
+8. If the directory does not exist, output "No such directory!"
 
 #### Example
 
