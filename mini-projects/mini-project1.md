@@ -182,14 +182,15 @@ Execute one of the following operations sequentially for each passed argument:
 3. "..": Change the CWD to the parent directory of the CWD, or do nothing if the CWD has no parent directory.
 4. "-": Change the CWD to the previous CWD or do nothing if there was no previous CWD. So, after starting the shell, till the first hop command which was not a "-" was run, you must do nothing.
 5. "name": Change the CWD to the specified relative or absolute path.
+6. If the directory does not exist, output "No such directory!"
 
 #### Example
 
 ```
-<rudy@iiit:~> hop ~
+<rudy@iiit:~/osnmp1> hop ~
 <rudy@iiit:~> hop ..
-<rudy@iiit:/home/rudy> hop osnmp1 .. -
-<rudy@iiit:~>
+<rudy@iiit:/home/> hop rudy/osnmp1 .. -
+<rudy@iiit:~/osnmp1>
 ```
 
 ### B.2: reveal \[20\]
@@ -209,6 +210,7 @@ Flags modify the default behavior of reveal.
 5. The argument passed invokes identical behavior to hop, except that here we are listing directory contents instead of changing the CWD.
 6. Ensure that the files are always listed in lexicographic order.
    Note that you are **not** required to implement the format of `ls -l`. (In fact if you do you may lose marks due to the automated evaluation!)
+7. If the directory does not exist, output "No such directory!"
 
 #### Example
 
@@ -216,10 +218,10 @@ Flags modify the default behavior of reveal.
 <rudy@iiit:~> reveal ~
 osnmp1
 <rudy@iiit:~> hop ..
-<rudy@iiit:/home/rudy> reveal
-osnmp1
-<rudy@iiit:/home/rudy> hop
-<rudy@iiit:~> reveal -la
+<rudy@iiit:/home> reveal
+rudy
+<rudy@iiit:/home> hop rudy/osnmp1
+<rudy@iiit:~/osnmp1> reveal -la
 .git
 .gitignore
 include
@@ -228,7 +230,7 @@ src
 shell.out
 Makefile
 README.md
-<rudy@iiit:~> reveal -lalalalaaaalal -lalala -al
+<rudy@iiit:~/osnmp1> reveal -lalalalaaaalal -lalala -al
 .git
 .gitignore
 include
@@ -237,7 +239,7 @@ src
 shell.out
 Makefile
 README.md
-<rudy@iiit:~> reveal -aaaaaaa -a
+<rudy@iiit:~/osnmp1> reveal -aaaaaaa -a
 .git .gitignore include llm_completions src shell.out Makefile README.md
 ```
 
