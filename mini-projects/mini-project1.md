@@ -119,7 +119,7 @@ A shell's job is to take input from a user, parse it, and then run any commands 
 After taking user input, the input must be parsed so that we can decide what the user wants the shell to do. You will be implementing a parser for the below Context Free Grammar
 
 ```
-shell_cmd  ->  cmd_group ((& | &&) cmd_group)* &?
+shell_cmd  ->  cmd_group ((& | ;) cmd_group)* &?
 cmd_group ->  atomic (\| atomic)*
 atomic -> name (name | input | output)*
 input -> < name | <name
