@@ -65,7 +65,7 @@ If you are using LLMs for any portion of the code,
     -fno-asm \
     your_file.c
   ```
-- Your final code submission **must** be compilable using the command `make all` in the root directory of the git repository. It **must** compile the shell to the file `shell.out`. If not done, this would cause automatic evaluation to fail, leading to zero marks. A test script will be provided soon.
+- Your final code submission **must** be compilable using the command `make all` in the root directory of the git repository. It **must** compile the shell to the file `shell.out`. If not done, this would cause automatic evaluation to fail, leading to zero marks. A test script will be provided soon. This binary should be created in the **shell directory**, and not the project root.
 
 ## Part A: Shell Input \[Total: 65\]
 
