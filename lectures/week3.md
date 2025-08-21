@@ -8,7 +8,7 @@ nav_order: 3
 
 ## Process Virtualization
 
-Policies (Round Robin and MLFQ) - [Download](https://karthikv1392.github.io/cs3301/slides/OSN_L05.pdf)
+Policies (Round Robin and MLFQ) - [Download](https://karthikv1392.github.io/cs3301_osn/slides/OSN_L05.pdf)
 
 
 ## Suggested Reading
