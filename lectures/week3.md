@@ -19,3 +19,7 @@ Networking - Introduction to Networking Layers - [Download](https://karthikv1392
 
 1. [OSTEP Chapter 8 - Scheduling: The Multi-Level Feedback Queue](https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-sched-mlfq.pdf)
 2. [OSTEP Chapter 9 - Scheduling Propotional Share](https://pages.cs.wisc.edu/~remzi/OSTEP/cpu-sched-lottery.pdf)
+
+## Suggested Viewing
+
+[Computer Networking: A Top-Down Approach 8th edition](https://gaia.cs.umass.edu/kurose_ross/online_lectures.htm)
