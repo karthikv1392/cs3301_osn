@@ -22,4 +22,4 @@ Networking - Introduction to Networking Layers - [Download](https://karthikv1392
 
 ## Suggested Viewing
 
-[Computer Networking: A Top-Down Approach 8th edition](https://gaia.cs.umass.edu/kurose_ross/online_lectures.htm)
+[Computer Networking: A Top-Down Approach 8th edition](https://gaia.cs.umass.edu/kurose_ross/videos/1/)
