@@ -833,7 +833,7 @@ Modify the makefile to support the SCHEDULER macro to compile the specified sche
 First Come First Serve: FCFS
 COmpletely Fair Scheduler: CFS
 
-## Fist Come Fist Serve [Marks 20]
+## First Come First Serve [Marks 20]
 
 we will modify the xv6 scheduler from strict round-robin to a firstcome-first-server (FCFS) scheduler. This will involve using the creation time entrying in the process control block that was added in part A. We will modify the scheduler function (kernel/proc.c). Scheduler will first have to find a RUNNABLE process with the earliest creation time. The process with the earliest arrival time is the process with the highest priority and therefor the process that is selected for execution. Only when the currently RUNNING process terminates is another process selected to RUN. It is suggested that you comment out the original round-robin scheduler code before adding your new version of the scheduler.
 
