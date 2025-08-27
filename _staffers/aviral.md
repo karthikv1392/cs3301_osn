@@ -2,11 +2,11 @@
 name: Aviral Gupta
 role: Teaching Assistant
 email: aviral.gupta@research.iiit.ac.in
-website:
+website: 
 photo: aviral.jpg
 ---
 
-Let's explore OSN together
+Here to help you OSN and chill.
 
 TA Hours: 
 - Tuesday 1400hrs - 1500hrs
