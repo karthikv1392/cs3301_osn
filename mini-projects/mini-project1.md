@@ -71,6 +71,8 @@ If you are using LLMs for any portion of the code,
 
 This is the base for the rest of the assignment. Work hard on this!
 
+**Banned Syscalls for Part A**: `exec*`, i.e. any of the syscalls whose names start with exec.
+
 ### A.1: The Shell Prompt \[10\]
 
 Your shell should show a prompt so that the user knows that they can provide input to it. Successfully completing most of this requirement merely requires your shell to display the below prompt!
