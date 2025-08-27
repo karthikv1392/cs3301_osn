@@ -214,6 +214,8 @@ Flags modify the default behavior of reveal.
    Note that you are **not** required to implement the format of `ls -l`. (In fact if you do you may lose marks due to the automated evaluation!)
    Further note that here you must use the ASCII values of the characters to sort the names lexicographically.
 8. If the directory does not exist, output "No such directory!"
+9. If reveal is passed too many arguments, output "reveal: Invalid Syntax!"
+10. If `reveal -` is run before any `hop` commands have been run since the start of the shell, output "No such directory!"
 
 #### Example
 
