@@ -9,5 +9,6 @@ photo: aviral.jpg
 Let's explore OSN together
 
 TA Hours: 
-- TBD
-- Location: TBD 
+- Tuesday 1400hrs - 1500hrs
+- Location: SERC, T-Hub 5th Floor
+- <b>Unofficially, feel free to mail me anytime and we can schedule for the earliest possible slot</b>
