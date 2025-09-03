@@ -6,8 +6,8 @@ website:
 photo: divijh.jpeg
 ---
 
-Let's explore OSN together
+Feel free to `ping` me - literally!
 
-TA Hours: 
-- TBD
-- Location: TBD 
+TA Hours:
+- Wednesday: 4pm - 5pm
+- Location: SERC, 5th Floor, T-Hub
