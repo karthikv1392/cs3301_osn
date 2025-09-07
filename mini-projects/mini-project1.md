@@ -126,7 +126,7 @@ cmd_group ->  atomic (\| atomic)*
 atomic -> name (name | input | output)*
 input -> < name | <name
 output -> > name | >name | >> name | >>name
-name -> r"[^|&><;]+"
+name -> r"[^|&><;\s]+"
 ```
 
 Below is another version of the **same grammar**, but provided in a pure regex format. This is to clarify that in the above grammar, **anywhere there is a space, you must handle an arbitrary amount of whitespace**. Note the usage of '*' and '+'.
@@ -134,9 +134,9 @@ Below is another version of the **same grammar**, but provided in a pure regex f
 ```
 shell_cmd  ->  r"(?P<cmd_group1>.+)(?P<WS1>\s*)((&|;)(?P<WS2>\s*)(?P<cmd_group2>.+))*(?P<WS3>\s*)&?"
 cmd_group ->  r"(?P<atomic1>.+)(?P<WS1>\s*)(\|(?P<WS2>\s*)(?P<atomic2>.+))*"
-atomic -> r"(?P<NAME1>[^|&><;]+)(?P<WS1>\s+)((?P<NAME2>[^|&><;]+)|(?P<input>.+)|(?P<output>.+))*"
-input -> r"<(?P<WS>\s*)(?P<NAME>[^|&><;]+)"
-output -> r"(>|>>)(?P<WS>\s*)(?P<NAME>[^|&><;]+)"
+atomic -> r"(?P<NAME1>[^|&><;\s]+)(?P<WS1>\s+)((?P<NAME2>[^|&><;\s]+)|(?P<input>.+)|(?P<output>.+))*"
+input -> r"<(?P<WS>\s*)(?P<NAME>[^|&><;\s]+)"
+output -> r"(>|>>)(?P<WS>\s*)(?P<NAME>[^|&><;\s]+)"
 ```
 
 Instead of attempting to understand any of these regexes, I highly recommend copying the regex (the text between the double quotes) and pasting it into [Regex101](https://regex101.com/). Ensure that you select the flavor to be 'Python' and that you disable the 'global' and 'multiline' options which are auto enabled in the 'Regex Flags' menu. An explanation for the provided regex can be seen on the right hand side.
