@@ -328,6 +328,7 @@ This part was implicitly required, and has just been added explicitly for clarit
 2. For `>>`, the shell must append to the passed file (or create if it doesn't exist) and open it for appending.
 3. When multiple output redirections are present (e.g., `command > file1 > file2`), only the last one must take effect.
 4. Input and output redirection must work together (e.g., `command < input.txt > output.txt`).
+5. If the output file cannot be created for some reason, the shell must print "Unable to create file for writing" and not execute the command.
 
 ### C.4: Command Piping \[100\]
 
