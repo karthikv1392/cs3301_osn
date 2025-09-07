@@ -300,7 +300,7 @@ For this part, you will implement I/O redirection and command piping. When proce
 
 ### C.1: Command Execution
 
-This part was implicitly required, and has just been added explicitly for clarity. You must allow the execution of **arbitrary comands**. This includes commands like `cat`, `echo`, `sleep`, etc. 
+This part was implicitly required, and has just been added explicitly for clarity. You must allow the execution of **arbitrary comands**. This includes commands like `cat`, `echo`, `sleep`, etc. If a command does not exist (example `dosakdaoskdos`), output `Command not found!`.
 
 ### C.2: Input Redirection \[50\]
 
