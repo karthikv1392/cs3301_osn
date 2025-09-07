@@ -229,21 +229,21 @@ rudy
 <rudy@iiit:~/osnmp1> reveal -la
 .git
 .gitignore
+Makefile
+README.md
 include
 llm_completions
 src
 shell.out
-Makefile
-README.md
 <rudy@iiit:~/osnmp1> reveal -lalalalaaaalal -lalala -al
 .git
 .gitignore
+Makefile
+README.md
 include
 llm_completions
 src
 shell.out
-Makefile
-README.md
 <rudy@iiit:~/osnmp1> reveal -aaaaaaa -a
 .git .gitignore include llm_completions src shell.out Makefile README.md
 ```
