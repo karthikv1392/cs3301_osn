@@ -377,7 +377,6 @@ This part was implicitly required, and has just been added explicitly for clarit
 5. When a background process completes successfully, the shell must print: `command_name with pid process_id exited normally`
 6. When a background process exits abnormally, the shell must print: `command_name with pid process_id exited abnormally`
 7. Background processes must not have access to the terminal for input.
-8. If a background command in a sequence is followed by more commands (e.g., `cmd1 & cmd2`), only `cmd1` runs in the background.
 
 ## Part E: Exotic Shell Intrinsics \[Total: 110\]
 
