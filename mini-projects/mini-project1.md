@@ -404,6 +404,7 @@ This part was implicitly required, and has just been added explicitly for clarit
 1. The command must take the signal number modulo 32 before sending: `actual_signal = signal_number % 32`
 2. If the process does not exist, the command must print "No such process found"
 3. On successful signal delivery, the command must print "Sent signal signal_number to process with pid `<pid>`"
+4. If the inputted `signal_number` is not a valid number, print `Invalid syntax!`.
 
 ### E.3: Ctrl-C, Ctrl-D and Ctrl-Z \[30\]
 
