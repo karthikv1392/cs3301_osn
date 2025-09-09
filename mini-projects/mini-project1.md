@@ -27,11 +27,13 @@ Marks are divided into 2 categories
 If you are using LLMs for any portion of the code,
 
 - Enclose the LLM generated portion as below,
+
   ```
   ############## LLM Generated Code Begins ##############
   some llm generated code
   ############## LLM Generated Code Ends ################
   ```
+
 - Provide the exact prompts and LLM responses as image files in a folder called `llm_completions/`
 
 ## Notes Regarding Grading
@@ -54,8 +56,9 @@ If you are using LLMs for any portion of the code,
 ## General Requirements
 
 - The project must be broken down into multiple .c and .h files based on functionality. Monolithic code in a single file will be heavily penalized.
-- You may only use the C POSIX library headers and functions. The documentation for these are provided here - https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html.
+- You may only use the C POSIX library headers and functions. The documentation for these are provided here - <https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html>.
 - Use the below `gcc` feature flags while compiling to ensure POSIX compliance.
+
   ```
   gcc -std=c99 \
     -D_POSIX_C_SOURCE=200809L \
@@ -65,6 +68,7 @@ If you are using LLMs for any portion of the code,
     -fno-asm \
     your_file.c
   ```
+
 - Your final code submission **must** be compilable using the command `make all` in the **shell directory** of the git repository. It **must** compile the shell to the file `shell.out`. If not done, this would cause automatic evaluation to fail, leading to zero marks. ~A test script will be provided soon~ (Done, see Moodle). This binary should be created in the **shell directory**, and not the project root.
 
 ## Part A: Shell Input \[Total: 65\]
@@ -411,20 +415,20 @@ This part was implicitly required, and has just been added explicitly for clarit
 
 **Purpose**: These keyboard shortcuts provide job control functionality.
 
-#### Requirements for Ctrl-C (SIGINT):
+#### Requirements for Ctrl-C (SIGINT)
 
 1. The shell must install a signal handler for SIGINT.
 2. The handler must send SIGINT to the current foreground child process group if one exists.
 3. The shell itself must not terminate on Ctrl-C.
 
-#### Requirements for Ctrl-D (EOF):
+#### Requirements for Ctrl-D (EOF)
 
 1. The shell must detect the EOF condition.
 2. The shell must send SIGKILL to all child processes.
 3. The shell must exit with status 0.
 4. The shell must print "logout" before exiting.
 
-#### Requirements for Ctrl-Z (SIGTSTP):
+#### Requirements for Ctrl-Z (SIGTSTP)
 
 1. The shell must install a signal handler for SIGTSTP.
 2. The handler must send SIGTSTP to the current foreground child process group if one exists.
@@ -438,7 +442,7 @@ This part was implicitly required, and has just been added explicitly for clarit
 
 **Purpose**: The fg and bg commands control background and stopped jobs.
 
-#### Requirements for fg command:
+#### Requirements for fg command
 
 1. The command must bring a background or stopped job to the foreground.
 2. If the job is stopped, the command must send SIGCONT to resume it.
@@ -447,7 +451,7 @@ This part was implicitly required, and has just been added explicitly for clarit
 5. If the job number doesn't exist, the command must print "No such job"
 6. The command must print the entire command when bringing it to foreground.
 
-#### Requirements for bg command:
+#### Requirements for bg command
 
 1. The command must resume a stopped background job by sending SIGCONT.
 2. The job must continue running in the background after receiving the signal.
@@ -704,7 +708,7 @@ To allow the evaluator to verify the internal mechanics of your protocol, you mu
 - **Client:** `client_log.txt`
 - **Log Line Format:** Each line in the log file must start with a timestamp in `[YYYY-MM-DD HH:MM:SS.microseconds]` format, followed by the `[LOG]` prefix and the event descriptiion.
 
-#### Implementation Note:
+#### Implementation Note
 
 To get microsecond-level precision for your timestamps, you cannot use the standard `time()` function. You should use `gettimeofday()` from `<sys/time.h>`.
 
@@ -731,7 +735,7 @@ fprintf(log_file, "[%s.%06ld] [LOG] Your message here\n", time_buffer, tv.tv_use
 
 ```
 
-#### Required Log Events:
+#### Required Log Events
 
 Your implementation must write a timestamped log message to the designated log file for each of the following events when logging is active:
 
@@ -918,17 +922,17 @@ PID: 5 | vRuntime: 180
 ```
 
 The report also must contain brief explanation about the implementation of the specifications. A few lines about your changes for each spec is fine.
-Include the performance comparison between the default(Round Robin), FCFS and CFS scheduling policies by showing the average waiting and running times for processes. Set the processes to run on only 1 CPU for this purpose. Use the schedulertest command to get this information.
+Include the performance comparison between the default(Round Robin), FCFS and CFS scheduling policies by showing the average waiting and running times for processes. Set the processes to run on only 1 CPU for this purpose. Use the [schedulertest](https://iiithydresearch-my.sharepoint.com/:u:/g/personal/prakhar_jain_research_iiit_ac_in/ER9ZYNvTcdlLhtTf_jrs1sgBEmsKOfn_VImzk8dJk4eEdA?e=nbYHq6) command to get this information.
 
 # Bonus: Simplified Preemptive MLFQ Scheduler for XV6 (25 Marks)
 
 `Important`: This bonus counts towards the overall bonus for the course not particular to this assignment.
 
-### Queues & Priorities:
+### Queues & Priorities
 
-#### Four priority queues: 0 (highest) → 3 (lowest).
+#### Four priority queues: 0 (highest) → 3 (lowest)
 
-##### Time slices:
+##### Time slices
 
 - Queue 0 → 1 tick
 
@@ -938,7 +942,7 @@ Include the performance comparison between the default(Round Robin), FCFS and CF
 
 - Queue 3 → 16 ticks
 
-### Scheduling Rules:
+### Scheduling Rules
 
 - New Processes: Start in queue 0 (end of queue).
 
