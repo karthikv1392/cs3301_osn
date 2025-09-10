@@ -269,6 +269,7 @@ shell.out
    - No arguments: Print the stored commands in order of oldest to newest.
    - `purge`: Clear the history.
    - `execute <index>`: Execute the command at the given index (one-indexed, indexed in order of newest to oldest). Do not store the executed command.
+7. If the syntax is incorrect (Ex: `log log`), print "log: Invalid Syntax!"
   
 EDIT - I recommend implementing this command after implementing part C.1.
 
