@@ -460,6 +460,7 @@ Your job is to watch the traffic flow by, not to thrash about and create a tidal
 You are strictly forbidden from sending, injecting, or crafting packets. LAZY Corp’s legal team has a very small budget,
 and they don’t want to spend it bailing you out for taking down the campus Wi-Fi. Observe only.
 
+And when the big day comes, **keep [Wireshark](https://www.wireshark.org/download.html) handy** – it's your official 'reality check' to ensure your sniffer isn't just making things up. That is have wireshark downloaded and setup on your system during the evals.
 
 ## Phase 1: Setting the Hook - Interface & Basic Capture
 
@@ -629,7 +630,7 @@ Finally, let's peek at the actual data.
 HTTP, HTTPS, and DNS. For others, you can label them "Unknown".
 
 **Display Payload:** Show the length of the payload. And, you must display the first 64 bytes of
-the payload in a combined hex and ASCII format (a "hex dump").
+the payload in a combined hex and ASCII format (a "hex dump" - this format is mandatory).
 
 **Example Outputs:**
 ```
@@ -662,7 +663,7 @@ L7 (Payload): Identified as DNS on port 53 - 46 bytes
 Data (first 46 bytes):
 E5 52 01 00 00 01 00 00 00 00 00 00 08 74 61 73 .R...........tas
 6B 73 2D 70 61 08 63 6C 69 65 6E 74 73 36 06 67 ks-pa.clients6.g
-6F 6F 67 6C 65 03 63 6F 6D 00 00 41 00 01 oogle.com..A..
+6F 6F 67 6C 65 03 63 6F 6D 00 00 41 00 01       oogle.com..A..
 ```
 
 ## Phase 3: Precision Hunting - Filtering the Stream [2]
@@ -705,7 +706,7 @@ more closely.
 **In-Depth Analysis:** The output for the selected packet must be a comprehensive breakdown.
 For every supported layer, you must show both the raw hexadecimal values and their
 human-readable interpretation. The entire packet frame must also be displayed in a full
-hex dump. And even the payload if applicable. Here's an example of how the output might [look](https://postimg.cc/gallery/VfHVg5L) (just an example,
+hex dump (a "hex dump" must be present). And even the payload if applicable. Here's an example of how the output might [look](https://postimg.cc/gallery/VfHVg5L) (just an example,
 you can design your own format, what to put, what not to put as long as the basic minimum requirements are met
 ...the example has a couple of extra and missing things).
 
@@ -731,20 +732,23 @@ sudo ./cshark
 # Part C — Fighting for the resources (20 Marks)
 
 
-A office bakery has four ovens, four chefs, and a waiting area that can accommodate four customers on a sofa eating for their cake to be baked and that has standing room for additional customers. As the office bakery is a new one and on small scale it is limited the total number of customers in the 25. A customer will not enter the office bakery if it is filled to capacity with other customers.  
-Once inside, the customer takes a seat on the sofa or stands if the sofa is filled. When a chef is free, the customer that has been on the sofa the longest is served and, if there are any
-standing customers, the one that has been in the shop the longest takes a seat on the sofa.  
-When a customer’s cake is finished, any chef can accept payment, but because there is only one cash register, payment is accepted for one customer at a time. There is no separate staff as this a small office bakery. Chefs handle payment and also bake the cakes. The chefs divide their time among baking cakes, accepting payment, and learning new recipes while waiting for a customer.  
+A office bakery has four ovens, four chefs, and a waiting area that can accommodate four customers on a sofa waiting for their cake to be baked and that has standing room for additional customers. As the office bakery is a new one and small scale, it is limited to accommodate 25 customers. A customer will not enter the office bakery if it is filled to capacity with other customers.
+
+Once inside, the customer takes a seat on the sofa or stands if the sofa is filled. When a chef is free, the customer that has been on the sofa the longest is served and, if there are any standing customers, the one that has been in the shop the longest takes a seat on the sofa.
+
+When a customer’s cake is finished, any chef can accept payment, but because there is only one cash register, payment is accepted for one customer at a time. There is no separate staff as this a small office bakery. Chefs handle payment and also bake the cakes. Chefs divide their time among baking cakes, accepting payment, and learning new recipes while waiting for a customer.
+
 In other words to make the question clear, the following  constraints apply:
 - Customers on arriving the office bakery invoke the following functions in order: enteroffice bakery, sitOnSofa, getcake, pay.
-- Chefs invoke bake cake and acceptPayment. They should prioritise taking money over baking cake.
-- Customers cannot invoke enter bakery if the shop is at capacity.
+- Chefs invoke bakecake and acceptPayment. They should prioritise taking money over baking cake.
+- Customers cannot invoke enterofficebakery if the shop is at capacity.
 - If the sofa is full, an arriving customer cannot invoke sitOnSofa.
 - When a customer invokes getcake there should be a corresponding chef executing bakecake concurrently, and vice versa.
 - It should be possible for up to four customers to execute get cake concurrently, and up to four chefs to execute bakecake concurrently.
 - The customer has to pay before the chef can acceptPayment.
-- The chef must acceptPayment before the customer can exit. Chefs ids are 1,2,3,4
-**Note**: Take every action which customer performs takes 1 second. That means Customer entering to sitting in sofa takes 1 second. But chef’s action baking cake and accepting payment takes 2 seconds. 
+- The chef must acceptPayment before the customer can exit. Chefs ids are 1,2,3,4 Note: Take every action which customer performs takes 1 second. That means Customer entering to sitting in sofa takes 1 second. But chef’s action baking cake and accepting payment takes 2 seconds.
+- Once the customer sits on sofa, the seat is reserved for him till he leaves after the payment.
+- Any action cannot be split. If a person initiated an action, he should continue till he is done. For example, chef should give 2 seconds for payment. He cannot split it.
 
 ## Input :
 
@@ -776,6 +780,37 @@ you don’t need to print chef learning new recipes
 
 #### Note: As this is a multithreading assignment, you should use threads. Each of the chef is a thread and each of customer is another thread.
 
+---
+
+# Submission Format:
+
+Your repository must strictly follow the strcutre given below, failure to do so would lead the autograder to fail and requests for wrong submission format shall not be entertained.
+
+You shall directly have this submission format in your repository when you sync fork the repository (which means that this submission format is directly given by default in the starter template code), so you need not worry about it.
+
+```
+your_repo
+├── A
+│   ├── kernel/
+│   ├── LICENSE
+│   ├── Makefile
+│   ├── mkfs/
+│   ├── README
+│   ├── test-xv6.py
+│   └── user/
+├── B
+│   ├── Makefile
+│   └── README.md
+│   └── *.c files
+│   └── *.h files
+└── C
+    └── *.c file
+    └── README.md
+
+```
+`*` indicating you are free to name the file or files whatever you want.
+
+---
 
 > If you’ve made it this far, congratulations — you’ve survived the full **LAZY Corp Trilogy**. You’ve kept memory lazy, sniffed out network chaos, and juggled concurrency disasters. Consider yourself promoted… to unpaid senior intern.
 
