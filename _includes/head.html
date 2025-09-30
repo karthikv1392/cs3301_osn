@@ -2,7 +2,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   
-    <link rel="stylesheet" href="{{ '/assets/css/just-the-docs-default.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/just-the-docs-light.css' | relative_url }}">
   
     {% if site.ga_tracking != nil %}
       {% assign ga_tracking_ids = site.ga_tracking | split: "," %}
@@ -26,7 +26,8 @@
       <script src="https://cdn.jsdelivr.net/npm/mermaid@{{ site.mermaid.version }}/dist/mermaid.min.js"></script>
     {% endif %}
   
-    <script src="{{ '/assets/js/just-the-docs.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/just-the-docs.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/custom.js' | relative_url }}"></script>
 
     <script type="text/javascript" async
       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML">
