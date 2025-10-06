@@ -773,6 +773,109 @@ Example :
 <time_stamp> <Customer/Chef> <id> <actions>
 ```
 
+### Example 1
+
+**Input**
+
+```
+10 Customer 1
+11 Customer 2
+12 Customer 3
+<EOF>
+```
+
+**Possible Output Flow**
+
+```
+10 Customer 1 enters
+11 Customer 2 enters
+11 Customer 1 sits
+12 Customer 2 sits
+12 Customer 1 requests cake
+12 Customer 3 enters
+13 Chef 2 bakes for Customer 1
+13 Customer 3 sits
+13 Customer 2 requests cake
+14 Chef 1 bakes for Customer 2
+14 Customer 3 requests cake
+15 Customer 1 pays
+15 Chef 3 bakes for Customer 3
+16 Customer 2 pays
+16 Chef 2 accepts payment for Customer 1
+17 Customer 3 pays
+18 Customer 1 leaves
+18 Chef 1 accepts payment for Customer 2
+20 Customer 2 leaves
+20 Chef 3 accepts payment for Customer 3
+22 Customer 3 leaves
+```
+
+---
+
+### Example 2
+
+**Input**
+
+```
+21 Customer 1245
+22 Customer 2356
+23 Customer 3157
+24 Customer 4890
+25 Customer 5123
+26 Customer 6382
+<EOF>
+```
+
+**Possible Output Flow**
+
+```
+21 Customer 1245 enters
+22 Customer 2356 enters
+22 Customer 1245 sits
+23 Customer 3157 enters
+23 Customer 1245 requests cake
+23 Customer 2356 sits
+24 Customer 4890 enters
+24 Chef 1 bakes for Customer 1245
+24 Customer 2356 requests cake
+24 Customer 3157 sits
+25 Customer 5123 enters
+25 Chef 2 bakes for Customer 2356
+25 Customer 3157 requests cake
+25 Customer 4890 sits
+26 Customer 6382 enters
+26 Chef 3 bakes for Customer 3157
+26 Customer 4890 requests cake
+26 Customer 1245 pays
+27 Customer 5123 requests cake
+27 Chef 1 accepts payment for Customer 1245
+27 Customer 2356 pays
+27 Chef 4 bakes for Customer 4890
+28 Customer 6382 requests cake
+28 Customer 3157 pays
+29 Customer 1245 leaves
+29 Customer 5123 sits
+29 Chef 2 accepts payment for Customer 2356
+29 Customer 4890 pays
+30 Customer 5123 requests cake
+30 Chef 1 bakes for Customer 5123
+31 Customer 2356 leaves
+31 Customer 6382 sits
+31 Chef 3 accepts payment for Customer 3157
+31 Customer 5123 pays
+32 Customer 6382 requests cake
+32 Chef 4 bakes for Customer 6382
+33 Customer 3157 leaves
+33 Chef 4 accepts payment for Customer 4890
+34 Customer 6382 pays
+35 Customer 4890 leaves
+35 Chef 1 accepts payment for Customer 5123
+37 Customer 5123 leaves
+37 Chef 2 accepts payment for Customer 6382
+39 Customer 6382 leaves
+```
+
+
 Customer actions enters/sits/requests cake/pays/leaves 
 
 Chef actions bakes/accept payments.
@@ -817,3 +920,4 @@ your_repo
 
 
 ---
+
