@@ -177,9 +177,10 @@ Think of this as the **PagedOut employee handbook**:
   - No sharing or reuse between processes.  
   - Swap file uses regular disk blocks (no dedicated partition required).  
 
-* **Eviction and Swap Management [17 Marks]**  
-  - Clean page → may be discarded (no disk I/O) **[5 Marks]**  
-  - Dirty page → write to process’s swap file **[5 Marks]**  
+* **Eviction and Swap Management [17 Marks]**
+  - A page must always have a valid copy of its contents — either in memory, in the executable file, or in the process’s swap file.
+  - Clean pages may be discarded only if a valid backing copy already exists **[5 Marks]**
+  - Dirty pages, or pages that no longer have a valid backing copy, must be written to the process’s swap file. **[5 Marks]**
   - Track free/used slots; free a slot when a page is reloaded **[4 Marks]**  
   - Each slot is **page-sized** (4096 bytes).  
   - Max swap capacity: 1024 pages (4 MB).  
@@ -813,5 +814,6 @@ your_repo
 ---
 
 > If you’ve made it this far, congratulations — you’ve survived the full **LAZY Corp Trilogy**. You’ve kept memory lazy, sniffed out network chaos, and juggled concurrency disasters. Consider yourself promoted… to unpaid senior intern.
+
 
 ---
