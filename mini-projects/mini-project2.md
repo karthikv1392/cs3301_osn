@@ -831,47 +831,46 @@ Example :
 ```
 21 Customer 1245 enters
 22 Customer 2356 enters
-22 Customer 1245 sits
+22 Customer 1245 sits                   
 23 Customer 3157 enters
 23 Customer 1245 requests cake
-23 Customer 2356 sits
+23 Customer 2356 sits                   
 24 Customer 4890 enters
-24 Chef 1 bakes for Customer 1245
+24 Chef 1 bakes for Customer 1245       
 24 Customer 2356 requests cake
-24 Customer 3157 sits
+24 Customer 3157 sits                   
 25 Customer 5123 enters
-25 Chef 2 bakes for Customer 2356
+25 Chef 2 bakes for Customer 2356       
 25 Customer 3157 requests cake
-25 Customer 4890 sits
-26 Customer 6382 enters
-26 Chef 3 bakes for Customer 3157
+25 Customer 4890 sits                   
+26 Customer 6382 enters                
+26 Chef 3 bakes for Customer 3157       
 26 Customer 4890 requests cake
-26 Customer 1245 pays
-27 Customer 5123 requests cake
-27 Chef 1 accepts payment for Customer 1245
-27 Customer 2356 pays
-27 Chef 4 bakes for Customer 4890
+26 Customer 1245 pays                   
+27 Chef 1 accepts payment for Customer 1245  
+27 Customer 2356 pays                   
+27 Chef 4 bakes for Customer 4890       
 28 Customer 6382 requests cake
-28 Customer 3157 pays
-29 Customer 1245 leaves
-29 Customer 5123 sits
-29 Chef 2 accepts payment for Customer 2356
-29 Customer 4890 pays
+28 Customer 3157 pays                   
+29 Customer 1245 leaves                
+29 Customer 5123 sits                   
+29 Chef 2 accepts payment for Customer 2356  
+29 Customer 4890 pays                   
 30 Customer 5123 requests cake
-30 Chef 1 bakes for Customer 5123
-31 Customer 2356 leaves
-31 Customer 6382 sits
-31 Chef 3 accepts payment for Customer 3157
-31 Customer 5123 pays
-32 Customer 6382 requests cake
-32 Chef 4 bakes for Customer 6382
-33 Customer 3157 leaves
-33 Chef 4 accepts payment for Customer 4890
-34 Customer 6382 pays
-35 Customer 4890 leaves
-35 Chef 1 accepts payment for Customer 5123
-37 Customer 5123 leaves
-37 Chef 2 accepts payment for Customer 6382
+30 Chef 1 bakes for Customer 5123       
+31 Customer 2356 leaves                 
+32 Customer 6382 sits                   
+31 Chef 3 accepts payment for Customer 3157  
+31 Customer 5123 pays                   
+33 Customer 6382 requests cake
+33 Customer 3157 leaves                 
+33 Chef 4 accepts payment for Customer 4890  
+34 Customer 6382 pays                   
+34 Chef 4 bakes for Customer 6382       
+35 Customer 4890 leaves                 
+35 Chef 1 accepts payment for Customer 5123  
+37 Customer 5123 leaves                 
+37 Chef 2 accepts payment for Customer 6382  
 39 Customer 6382 leaves
 ```
 
@@ -920,4 +919,5 @@ your_repo
 
 
 ---
+
 
