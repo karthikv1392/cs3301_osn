@@ -27,11 +27,13 @@ Marks are divided into 2 categories
 If you are using LLMs for any portion of the code,
 
 - Enclose the LLM generated portion as below,
+
   ```
   ############## LLM Generated Code Begins ##############
   some llm generated code
   ############## LLM Generated Code Ends ################
   ```
+
 - Provide the exact prompts and LLM responses as image files in a folder called `llm_completions/`
 
 ## Notes Regarding Grading
@@ -54,8 +56,9 @@ If you are using LLMs for any portion of the code,
 ## General Requirements
 
 - The project must be broken down into multiple .c and .h files based on functionality. Monolithic code in a single file will be heavily penalized.
-- You may only use the C POSIX library headers and functions. The documentation for these are provided here - https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html.
+- You may only use the C POSIX library headers and functions. The documentation for these are provided here - <https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html>.
 - Use the below `gcc` feature flags while compiling to ensure POSIX compliance.
+
   ```
   gcc -std=c99 \
     -D_POSIX_C_SOURCE=200809L \
@@ -65,11 +68,14 @@ If you are using LLMs for any portion of the code,
     -fno-asm \
     your_file.c
   ```
-- Your final code submission **must** be compilable using the command `make all` in the root directory of the git repository. It **must** compile the shell to the file `shell.out`. If not done, this would cause automatic evaluation to fail, leading to zero marks. A test script will be provided soon. This binary should be created in the **shell directory**, and not the project root.
+
+- Your final code submission **must** be compilable using the command `make all` in the **shell directory** of the git repository. It **must** compile the shell to the file `shell.out`. If not done, this would cause automatic evaluation to fail, leading to zero marks. ~A test script will be provided soon~ (Done, see Moodle). This binary should be created in the **shell directory**, and not the project root.
 
 ## Part A: Shell Input \[Total: 65\]
 
 This is the base for the rest of the assignment. Work hard on this!
+
+**Banned Syscalls for Part A**: `exec*`, i.e. any of the syscalls whose names start with exec.
 
 ### A.1: The Shell Prompt \[10\]
 
@@ -124,7 +130,7 @@ cmd_group ->  atomic (\| atomic)*
 atomic -> name (name | input | output)*
 input -> < name | <name
 output -> > name | >name | >> name | >>name
-name -> r"[^|&><;]+"
+name -> r"[^|&><;\s]+"
 ```
 
 Below is another version of the **same grammar**, but provided in a pure regex format. This is to clarify that in the above grammar, **anywhere there is a space, you must handle an arbitrary amount of whitespace**. Note the usage of '*' and '+'.
@@ -132,9 +138,9 @@ Below is another version of the **same grammar**, but provided in a pure regex f
 ```
 shell_cmd  ->  r"(?P<cmd_group1>.+)(?P<WS1>\s*)((&|;)(?P<WS2>\s*)(?P<cmd_group2>.+))*(?P<WS3>\s*)&?"
 cmd_group ->  r"(?P<atomic1>.+)(?P<WS1>\s*)(\|(?P<WS2>\s*)(?P<atomic2>.+))*"
-atomic -> r"(?P<NAME1>[^|&><;]+)(?P<WS1>\s+)((?P<NAME2>[^|&><;]+)|(?P<input>.+)|(?P<output>.+))*"
-input -> r"<(?P<WS>\s*)(?P<NAME>[^|&><;]+)"
-output -> r"(>|>>)(?P<WS>\s*)(?P<NAME>[^|&><;]+)"
+atomic -> r"(?P<NAME1>[^|&><;\s]+)(?P<WS1>\s+)((?P<NAME2>[^|&><;\s]+)|(?P<input>.+)|(?P<output>.+))*"
+input -> r"<(?P<WS>\s*)(?P<NAME>[^|&><;\s]+)"
+output -> r"(>|>>)(?P<WS>\s*)(?P<NAME>[^|&><;\s]+)"
 ```
 
 Instead of attempting to understand any of these regexes, I highly recommend copying the regex (the text between the double quotes) and pasting it into [Regex101](https://regex101.com/). Ensure that you select the flavor to be 'Python' and that you disable the 'global' and 'multiline' options which are auto enabled in the 'Regex Flags' menu. An explanation for the provided regex can be seen on the right hand side.
@@ -212,6 +218,8 @@ Flags modify the default behavior of reveal.
    Note that you are **not** required to implement the format of `ls -l`. (In fact if you do you may lose marks due to the automated evaluation!)
    Further note that here you must use the ASCII values of the characters to sort the names lexicographically.
 8. If the directory does not exist, output "No such directory!"
+9. If reveal is passed too many arguments, output "reveal: Invalid Syntax!"
+10. If `reveal -` is run before any `hop` commands have been run since the start of the shell, output "No such directory!"
 
 #### Example
 
@@ -225,21 +233,21 @@ rudy
 <rudy@iiit:~/osnmp1> reveal -la
 .git
 .gitignore
+Makefile
+README.md
 include
 llm_completions
 src
 shell.out
-Makefile
-README.md
 <rudy@iiit:~/osnmp1> reveal -lalalalaaaalal -lalala -al
 .git
 .gitignore
+Makefile
+README.md
 include
 llm_completions
 src
 shell.out
-Makefile
-README.md
 <rudy@iiit:~/osnmp1> reveal -aaaaaaa -a
 .git .gitignore include llm_completions src shell.out Makefile README.md
 ```
@@ -261,6 +269,7 @@ README.md
    - No arguments: Print the stored commands in order of oldest to newest.
    - `purge`: Clear the history.
    - `execute <index>`: Execute the command at the given index (one-indexed, indexed in order of newest to oldest). Do not store the executed command.
+7. If the syntax is incorrect (Ex: `log log`), print "log: Invalid Syntax!"
   
 EDIT - I recommend implementing this command after implementing part C.1.
 
@@ -296,7 +305,7 @@ For this part, you will implement I/O redirection and command piping. When proce
 
 ### C.1: Command Execution
 
-This part was implicitly required, and has just been added explicitly for clarity. You must allow the execution of **arbitrary comands**. This includes commands like `cat`, `echo`, `sleep`, etc. 
+This part was implicitly required, and has just been added explicitly for clarity. You must allow the execution of **arbitrary comands**. This includes commands like `cat`, `echo`, `sleep`, etc. If a command does not exist (example `dosakdaoskdos`), output `Command not found!`.
 
 ### C.2: Input Redirection \[50\]
 
@@ -324,6 +333,7 @@ This part was implicitly required, and has just been added explicitly for clarit
 2. For `>>`, the shell must append to the passed file (or create if it doesn't exist) and open it for appending.
 3. When multiple output redirections are present (e.g., `command > file1 > file2`), only the last one must take effect.
 4. Input and output redirection must work together (e.g., `command < input.txt > output.txt`).
+5. If the output file cannot be created for some reason, the shell must print "Unable to create file for writing" and not execute the command.
 
 ### C.4: Command Piping \[100\]
 
@@ -373,7 +383,6 @@ This part was implicitly required, and has just been added explicitly for clarit
 5. When a background process completes successfully, the shell must print: `command_name with pid process_id exited normally`
 6. When a background process exits abnormally, the shell must print: `command_name with pid process_id exited abnormally`
 7. Background processes must not have access to the terminal for input.
-8. If a background command in a sequence is followed by more commands (e.g., `cmd1 & cmd2`), only `cmd1` runs in the background.
 
 ## Part E: Exotic Shell Intrinsics \[Total: 110\]
 
@@ -401,25 +410,26 @@ This part was implicitly required, and has just been added explicitly for clarit
 1. The command must take the signal number modulo 32 before sending: `actual_signal = signal_number % 32`
 2. If the process does not exist, the command must print "No such process found"
 3. On successful signal delivery, the command must print "Sent signal signal_number to process with pid `<pid>`"
+4. If the inputted `signal_number` is not a valid number, print `Invalid syntax!`.
 
 ### E.3: Ctrl-C, Ctrl-D and Ctrl-Z \[30\]
 
 **Purpose**: These keyboard shortcuts provide job control functionality.
 
-#### Requirements for Ctrl-C (SIGINT):
+#### Requirements for Ctrl-C (SIGINT)
 
 1. The shell must install a signal handler for SIGINT.
 2. The handler must send SIGINT to the current foreground child process group if one exists.
 3. The shell itself must not terminate on Ctrl-C.
 
-#### Requirements for Ctrl-D (EOF):
+#### Requirements for Ctrl-D (EOF)
 
 1. The shell must detect the EOF condition.
 2. The shell must send SIGKILL to all child processes.
 3. The shell must exit with status 0.
 4. The shell must print "logout" before exiting.
 
-#### Requirements for Ctrl-Z (SIGTSTP):
+#### Requirements for Ctrl-Z (SIGTSTP)
 
 1. The shell must install a signal handler for SIGTSTP.
 2. The handler must send SIGTSTP to the current foreground child process group if one exists.
@@ -433,7 +443,7 @@ This part was implicitly required, and has just been added explicitly for clarit
 
 **Purpose**: The fg and bg commands control background and stopped jobs.
 
-#### Requirements for fg command:
+#### Requirements for fg command
 
 1. The command must bring a background or stopped job to the foreground.
 2. If the job is stopped, the command must send SIGCONT to resume it.
@@ -442,7 +452,7 @@ This part was implicitly required, and has just been added explicitly for clarit
 5. If the job number doesn't exist, the command must print "No such job"
 6. The command must print the entire command when bringing it to foreground.
 
-#### Requirements for bg command:
+#### Requirements for bg command
 
 1. The command must resume a stopped background job by sending SIGCONT.
 2. The job must continue running in the background after receiving the signal.
@@ -699,7 +709,7 @@ To allow the evaluator to verify the internal mechanics of your protocol, you mu
 - **Client:** `client_log.txt`
 - **Log Line Format:** Each line in the log file must start with a timestamp in `[YYYY-MM-DD HH:MM:SS.microseconds]` format, followed by the `[LOG]` prefix and the event descriptiion.
 
-#### Implementation Note:
+#### Implementation Note
 
 To get microsecond-level precision for your timestamps, you cannot use the standard `time()` function. You should use `gettimeofday()` from `<sys/time.h>`.
 
@@ -726,7 +736,7 @@ fprintf(log_file, "[%s.%06ld] [LOG] Your message here\n", time_buffer, tv.tv_use
 
 ```
 
-#### Required Log Events:
+#### Required Log Events
 
 Your implementation must write a timestamped log message to the designated log file for each of the following events when logging is active:
 
@@ -913,17 +923,17 @@ PID: 5 | vRuntime: 180
 ```
 
 The report also must contain brief explanation about the implementation of the specifications. A few lines about your changes for each spec is fine.
-Include the performance comparison between the default(Round Robin), FCFS and CFS scheduling policies by showing the average waiting and running times for processes. Set the processes to run on only 1 CPU for this purpose. Use the schedulertest command to get this information.
+Include the performance comparison between the default(Round Robin), FCFS and CFS scheduling policies by showing the average waiting and running times for processes. Set the processes to run on only 1 CPU for this purpose. Use the [schedulertest](https://iiithydresearch-my.sharepoint.com/:u:/g/personal/prakhar_jain_research_iiit_ac_in/ER9ZYNvTcdlLhtTf_jrs1sgBEmsKOfn_VImzk8dJk4eEdA?e=nbYHq6) command to get this information.
 
 # Bonus: Simplified Preemptive MLFQ Scheduler for XV6 (25 Marks)
 
 `Important`: This bonus counts towards the overall bonus for the course not particular to this assignment.
 
-### Queues & Priorities:
+### Queues & Priorities
 
-#### Four priority queues: 0 (highest) → 3 (lowest).
+#### Four priority queues: 0 (highest) → 3 (lowest)
 
-##### Time slices:
+##### Time slices
 
 - Queue 0 → 1 tick
 
@@ -933,7 +943,7 @@ Include the performance comparison between the default(Round Robin), FCFS and CF
 
 - Queue 3 → 16 ticks
 
-### Scheduling Rules:
+### Scheduling Rules
 
 - New Processes: Start in queue 0 (end of queue).
 
