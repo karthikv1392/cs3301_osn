@@ -85,6 +85,7 @@ CREATE <filename> # Creates an empty file with name <filename>
 ```
 
 4. **[30] Write to a File**: Users can update the content of the file at a word level. This operation allows users to modify and append data to existing files.
+
 ```python
 WRITE <filename> <sentence_number>  # Locks the sentence for other users (if no file write access, should return appropriate here)
 <word_index> <content> # Updates the sentence at <word_index> with <content>
