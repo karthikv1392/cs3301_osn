@@ -95,6 +95,7 @@ WRITE <filename> <sentence_number>  # Locks the sentence for other users (if no 
 <word_index> <content> # User can update the sentence multiple times
 ETIRW # Relieves the sentence lock, allowing other users to finally write
 ```
+
 Few important points to note here:
 -  After each sentence write update, the index must word_index must update for the next sentence. If the user wants to update a different sentence, they must issue the WRITE command again.
 - The content may contain characters like period (.), exclamation mark (!), or question mark (?). The system should be able to recognise these sentence delimiters and create seperate sentences accordingly. (Please refer to examples given below, for more clarity).
