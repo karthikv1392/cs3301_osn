@@ -397,7 +397,7 @@ Client: VIEW
 
 ### Example 8: Stream File
 
-Same as READ, but the client receives the file content word-by-word (from the name server) with a delay of 0.1 seconds between each word.
+Same as READ, but the client receives the file content word-by-word (from the storage server) with a delay of 0.1 seconds between each word.
 
 ---
 
