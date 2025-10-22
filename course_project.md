@@ -316,8 +316,8 @@ Write Successful!
 Client: READ mouse.txt
 Im just a deeply mistaken hollow pocket-sized lil gei-fwen mouse. I dont like T-T PNS
 
-Client: WRITE mouse.txt 2  # Inserting a sentence delimiter
-Client: 5 and AAD. aaaah # New sentences : [I dont like T-T PNS and AAD.]* [aaaah]. Currently active status remains with the index at index 2
+Client: WRITE mouse.txt 1  # Inserting a sentence delimiter
+Client: 5 and AAD. aaaah # New sentences : [I dont like T-T PNS and AAD.]* [aaaah]. Currently active status remains with the index at index 1
 Client: 0 But,  # New sentence : [But, I dont like T-T PNS and AAD.]* [aaaah].
 Client: ETIRW
 Write Successful!
@@ -432,9 +432,8 @@ Client: INFO nuh_uh.txt
 --> Access: user1 (RW), user2 (R)
 --> Last Accessed: 2025-10-10 14:32 by user1
 
-Client: ADDACCESS -W nuh_uh.txt user3
+Client: ADDACCESS -W nuh_uh.txt user2
 Access granted successfully!
-
 
 --> File: feedback.txt
 --> Owner: user1
