@@ -97,7 +97,7 @@ ETIRW # Relieves the sentence lock, allowing other users to finally write
 ```
 
 Few important points to note here:
--  After each sentence write update, the index must word_index must update for the next sentence. If the user wants to update a different sentence, they must issue the WRITE command again.
+-  After each WRITE completion, the sentence index update. So, care must be taken for ensuring concurrent WRITEs are handled correctly.
 - The content may contain characters like period (.), exclamation mark (!), or question mark (?). The system should be able to recognise these sentence delimiters and create seperate sentences accordingly. (Please refer to examples given below, for more clarity).
     - Yes, every period (or question / exclamation mark) is a sentence delimiter, even if it is in the middle of a word like "e.g." or "Umm... ackchually!"
 
