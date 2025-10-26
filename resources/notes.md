@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Quiz 1 Notes
+title: Notes
 parent: Resources
 permalink: /resources/notes/
 nav_order: 1
