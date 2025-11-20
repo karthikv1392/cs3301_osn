@@ -1,0 +1,10 @@
+_site
+.bundle
+vendor/bundle
+log
+tmp
+node_modules
+.git
+*.gem
+coverage
+pkg

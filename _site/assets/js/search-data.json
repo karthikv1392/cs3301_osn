@@ -1,0 +1,506 @@
+{"0": {
+    "doc": "Announcements",
+    "title": "Announcements",
+    "content": "Announcements are stored in the _announcements directory and rendered according to the layout file, _layouts/announcement.html. ",
+    "url": "/announcements/",
+    "relUrl": "/announcements/"
+  },"1": {
+    "doc": "Announcements",
+    "title": "Week 1 Announcement",
+    "content": "Apr 8 &middot; 0 min read . | Create a new repository based on Just the Class. | Configure a publishing source for GitHub Pages. Your course website is now live! | Update _config.yml with your course information. | Edit and create .md Markdown files to add your content. | . ",
+    "url": "/announcements/",
+    "relUrl": "/announcements/"
+  },"2": {
+    "doc": "Announcements",
+    "title": "Welcome to CS6.401 SE",
+    "content": "Apr 1 &middot; 0 min read Hello world! . ",
+    "url": "/announcements/",
+    "relUrl": "/announcements/"
+  },"3": {
+    "doc": "Assignment 0",
+    "title": "Assignment 0 : Intro to System Calls",
+    "content": "Welcome everyone to your very first Assignment in Operating Systems &amp; Networks Course. This assignment is designed to give you a basic introduction to system calls and to give you an idea of what and how you will be working with in the coming Mini Projects. A system call is a routine that allows a user application to request actions that require special privileges. Adding system calls is one of several ways to extend the functions provided by the kernel. ",
+    "url": "/mini-projects/assignment0#assignment-0--intro-to-system-calls",
+    "relUrl": "/mini-projects/assignment0#assignment-0--intro-to-system-calls"
+  },"4": {
+    "doc": "Assignment 0",
+    "title": "GitHub Classroom",
+    "content": "For this project, check moodle to accept the assignment. You should find a list of roll numbers already available as soon as you click on the link, ensure that you select your roll number correctly as that will mapped to your github id throughout the course. You will then be assigned a private repository on GitHub. This is where you will be working on the assignment. All relevant instructions regarding this assignment can be found below. Note: If you are not familiar with git, please go through the git tutorial before proceeding. PS: Your github id does not need to be with your college id, it can be with your personal email id as well. ",
+    "url": "/mini-projects/assignment0#github-classroom",
+    "relUrl": "/mini-projects/assignment0#github-classroom"
+  },"5": {
+    "doc": "Assignment 0",
+    "title": "Instructions",
+    "content": "This Assignment works as a basic introduction to system calls and to give you an idea of what you will be working with in the coming Mini Projects. It is highly recommended to go through the Assignment to make the following Mini Projects easier. ",
+    "url": "/mini-projects/assignment0#instructions",
+    "relUrl": "/mini-projects/assignment0#instructions"
+  },"6": {
+    "doc": "Assignment 0",
+    "title": "Overview",
+    "content": "This assignment consists of two parts: . | Creating a file manipulation program that accepts user input and displays file content along with logging. | Implementing a process creation program that demonstrates various process API calls. | . Part 1: File Management . Create a C program that does the following: . Task Overview . Write a C program that behaves like a tiny file-based shell. When the program is started, it should: . | Create a directory named folder_&lt;pid&gt;, where &lt;pid&gt; is the process ID of your running program. | Inside this directory, create two files: . | content.txt — stores all user input | logs.txt — stores a log of all user interactions | . | . After setup, the program should enter an input loop where it supports the following commands: . Supported Commands . The commands are case-sensitive. INPUT . | Prompts the user with INPUT -&gt; and accepts a line of text. | This text is: . | Appended to content.txt in a new line | . | Add INPUT in logs.txt | . PRINT . | Prints the entire contents of content.txt to the terminal. | Add PRINT in logs.txt | . FIRST &lt;n&gt; . | Prints the first n lines from content.txt. | Add FIRST &lt;n&gt; in logs.txt | . LAST &lt;n&gt; . | Prints the last n lines from content.txt. | Add LAST &lt;n&gt; in logs.txt | . STOP . | Exits the program cleanly. | Add STOP in logs.txt | . LOG &lt;n&gt; . | Prints the n lastest logs from logs.txt. | Do not log this | . UNKNOWN COMMAND . | For any unrecognized input, print Unknown command.. | Do not log this | . Restrictions . You must not use the following functions: . | fread, fwrite | read, write | fprintf, fscanf, fgets, fputs | . Instead, you must use only: . | ",
+    "url": "/mini-projects/assignment0#overview",
+    "relUrl": "/mini-projects/assignment0#overview"
+  },"7": {
+    "doc": "Assignment 0",
+    "title": "scanf, printf for input and output",
+    "content": "| . Example Session . Enter command:INPUT INPUT -&gt; Hello world! Enter command:INPUT INPUT -&gt; This is a test. Enter command:PRINT Hello world! This is a test. Enter command:FIRST 1 Hello world! Enter command:LAST 1 This is a test. Enter command:STOP . ",
+    "url": "/mini-projects/assignment0#scanf-printf-for-input-and-output",
+    "relUrl": "/mini-projects/assignment0#scanf-printf-for-input-and-output"
+  },"8": {
+    "doc": "Assignment 0",
+    "title": "Part 2: Process Creation and Management",
+    "content": "Create a C program that does the following: . Task 1 . | Define an integer variable x = 25 in the parent. | create a child process. | In the child, increment x by 10 and print it with its PID. | In the parent, decrement x by 5 and print it with its PID. | . Task 2 . | In the parent, create a child process. | The child should execute an external program (e.g., ./writer) using execvp() or execlp(). | The external program should: . | Open (or create) a file newfile.txt. | Write the parent PID of the process (i.e., the child’s parent) to the file. | Then exit. | . | . Writer Program (writer.c) – must be compiled separately . Task 3 . | Create a child process. | The parent process should print its PID and terminate before its child. | The child process should sleep for 2 seconds, then print its own PID and parent PID | . 🔍 Compare Results from Task 2 and Task 3 . Compare: . | The parent PID written in newfile.txt (from Task 2). | The parent PID printed by the child in Task 3 (after orphaning). | . Discuss in README.md: . | Why do they differ? | What is the role of the init/systemd process? | . Additional Notes . | Assume no line exceeds 1024 characters. | Ensure all resources are freed and closed properly before exiting. | Do proper error handling | . ",
+    "url": "/mini-projects/assignment0#part-2-process-creation-and-management",
+    "relUrl": "/mini-projects/assignment0#part-2-process-creation-and-management"
+  },"9": {
+    "doc": "Assignment 0",
+    "title": "Submission",
+    "content": "The submission for this assignment will be through GitHub Classroom. The codebase will be automatically downloaded at the deadline, so ensure that everything is up in time. No exceptions will be granted. Include any assumptions or instruction to run in README. Assignment-0/ ├── Part-1/ │ └── fileManagement.c ├── Part-2/ │ ├── processManagement.c │ └── writer.c └── README.md . Hard Deadline : 11:59 PM, 9th August 2025 . The course policy regarding late days is not applicable on Assignment 0, therefore you cannot use late days with Assignment 0. If you use any AI tools don’t forget to follow guidelines in the course website. ",
+    "url": "/mini-projects/assignment0#submission",
+    "relUrl": "/mini-projects/assignment0#submission"
+  },"10": {
+    "doc": "Assignment 0",
+    "title": "Assignment 0",
+    "content": " ",
+    "url": "/mini-projects/assignment0",
+    "relUrl": "/mini-projects/assignment0"
+  },"11": {
+    "doc": "Calendar",
+    "title": "Calendar",
+    "content": " ",
+    "url": "/calendar/",
+    "relUrl": "/calendar/"
+  },"12": {
+    "doc": "Calendar",
+    "title": "Process Virtualization and Networks Introduction",
+    "content": "Aug 1 Introduction and Course Overview Aug 2 Tutorial 1 Assignment 0 release Aug 5 Process Abstraction and Process API Aug 8 Tutorial 2 Aug 9 Mechanism Limited Direct Execution Assignment 0 deadline Aug 10 Miniproject1 release Aug 12 Policy Scheduling Part 1 Aug 16 Tutorial 3 Aug 19 Policy Networks Scheduling Part 2 and Network Communication Aug 22 Networks Networking Layer and Sockets Aug 26 Networks Transport Layer Aug 29 Quiz 1 Quiz 1: Includes everything covered until previous lecture ",
+    "url": "/calendar/#process-virtualization-and-networks-introduction",
+    "relUrl": "/calendar/#process-virtualization-and-networks-introduction"
+  },"13": {
+    "doc": "Calendar",
+    "title": "Memory Virtualization and Application Layer",
+    "content": "Sep 2 Introduction to Memory Virtualization Aug 30 Tutorial Sep 4 Dynamic Relocation and Segmentation Sep 6 Paging and TLB Sep 9 Smaller Page Tables Sep 11 MP1 Deadline Sep 12 Paging Mechanisms and Policies MP2 Release Sep 16 Tutorial 4 Sep 19 Tutorial 5 Sep 26 Networks Application Layer ",
+    "url": "/calendar/#memory-virtualization-and-application-layer",
+    "relUrl": "/calendar/#memory-virtualization-and-application-layer"
+  },"14": {
+    "doc": "Calendar",
+    "title": "Concurrency, Link Layer and Physical Layer",
+    "content": "Sep 27 Concurrency Introduction to Concurrency Sep 30 Introduction to Locks Oct 3 Condition Variables Oct 4 Tutorial 7 Oct 7 Introduction to Semaphores Oct 10 Classical Problems and Concurrency Bugs Oct 11 Tutorial 7 Oct 14 Networks Working of Link Layer MAC and ARP Oct 16 Mini Project 2 Deadline Oct 17 Course Project Release Networks Working of Network Layer: Routing Process, DHCP and NAT ",
+    "url": "/calendar/#concurrency-link-layer-and-physical-layer",
+    "relUrl": "/calendar/#concurrency-link-layer-and-physical-layer"
+  },"15": {
+    "doc": "Calendar",
+    "title": "Persistence",
+    "content": "Oct 24 Hard Disks Oct 25 Tutorial 8 Oct 28 Quiz 2 Quiz 2: Includes everything covered from the mid sem until previous lecture Nov 1 Tutorial 9 Nov 7 RAIDS and RAID Levels Nov 11 Files and Directories Nov 14 File System Implementation ",
+    "url": "/calendar/#persistence",
+    "relUrl": "/calendar/#persistence"
+  },"16": {
+    "doc": "Calendar",
+    "title": "End to End",
+    "content": "Nov 15 Tutorial 10 Nov 18 OS and Networks Run Down Final Project Deadline ",
+    "url": "/calendar/#end-to-end",
+    "relUrl": "/calendar/#end-to-end"
+  },"17": {
+    "doc": "Course Policy",
+    "title": "Course Policy",
+    "content": "The detailed policy of the course along with the mark distribution is listed here . ",
+    "url": "/course_policy/",
+    "relUrl": "/course_policy/"
+  },"18": {
+    "doc": "Course Policy",
+    "title": "Teaching and Learning Methodology",
+    "content": "This course is designed in such a manner to help learners get the essence of principles behind the basic foundations of modern operating systems and networks. To this end, the course will follow a problem based learning methodology. Learners will be taught concepts of operating systems and networks by making them work on light weight operating system (MIT Xv6) as well as by providing them with concrete problems that captures the essence of the concepts taught during the lectures. Morover, the tutorials will be done through flipped classroom mechanism where the focus of tutorials will be to explain concepts through examples. We believe that this will promote deeper engagement and understanding. ",
+    "url": "/course_policy/#teaching-and-learning-methodology",
+    "relUrl": "/course_policy/#teaching-and-learning-methodology"
+  },"19": {
+    "doc": "Course Policy",
+    "title": "Zero Tolerance on Plagiarism",
+    "content": "This course requires student to submit assignments, participate in in-class activities, give mid and final exams, work with groups on projects and so on. Any forms of cheating or plagiarism will result in a score of 0 for projects, assignments or exams. Egregious cases will result in a grade of F for the course. Please check the institute policy on Academic Misconduct . ",
+    "url": "/course_policy/#zero-tolerance-on-plagiarism",
+    "relUrl": "/course_policy/#zero-tolerance-on-plagiarism"
+  },"20": {
+    "doc": "Course Policy",
+    "title": "Use of AI tools",
+    "content": "Students are free to use different AI tools like ChatGPT, Co-pilot, Cursor, etc. for the course assignments/projects. However, please do mention what tools and how they have been used in the submission report. This would imply that the students need to document the prompt used and the screenshot of the output produced by the AI tool on the report. Please note that while documenting the prompt, its important to ensure that they are documented step by step such that they are reproducible during evaluation (while using the same AI tool). Remember the different demos given in the class on how sometimes these tools can mislead or provide wrong solutions. Its important to know the concept before using the tools. Tools are at the end-of-the day enablers. Today it will be ChatGPT tomorrow it will be something else but the concepts needs to be clear to leverage the different tools. Bottomline, feel free to use different tools but use them wisely! . Please note that the instructors reserve the right to award 0 if the use of AI tools is not appropriately documented or acknowledged . ",
+    "url": "/course_policy/#use-of-ai-tools",
+    "relUrl": "/course_policy/#use-of-ai-tools"
+  },"21": {
+    "doc": "Course Policy",
+    "title": "Extra Days and Soft Deadlines",
+    "content": ". | Each student will have 7 extra days, which can be used both for mid submissions and final submissions of Mini Projects. They can use these late days at their discretion throughout the course. Extra days will allow the student to submit Mini Projects post the deadline without incurring any penalty. Making a late submission will not be considered as a late submission if the student has extra days left. The extra days will be exhausted first before the submission is considered late. | Every mini project will have a soft deadline followed by a hard deadline after 7 days. If the student makes a submission after the soft deadline, he/she will be penalized for every additional day until the hard deadline (if they have exhausted their extra days quota). For example, lets assume that the soft deadline is Sep 1 2025. This implies that the hard deadline will be Sep 8, 2025. The student in this case will be allowed to submit until Sep 8 2025. Assuming that the student has, for instance, 5 extra days left, they can delay submissions until Sep 6 2025 after which the submission will be penalized for each additional day. | No submissions will be entertained post the hard deadline. This implies that the corresponding submission will be evaluated with 0 points. | . ",
+    "url": "/course_policy/#extra-days-and-soft-deadlines",
+    "relUrl": "/course_policy/#extra-days-and-soft-deadlines"
+  },"22": {
+    "doc": "Course Policy",
+    "title": "Grading policy",
+    "content": ". | The students can request a re-evaluation of the grade until a week after the particular grade has been posted. After that the student may not discuss prior grades with the instructor. | There will be no make up quiz/activity/exam under any circumstances unless a prior permission is granted. | In case if a student is not able to submit an assignment/project on time, he/she can make use of extra days and soft deadline facility as explained above. No submissions will be entertained post the hard deadline. No e-mails from students regarding assignments extensions will be entertained. | Although course project grades are assigned for the entire team, each individual may be given a higher or lower grade (up to 50%) based on his/her contribution. Individual contribution for each project/assignment will be measured through multiple mechanisms. | . ",
+    "url": "/course_policy/#grading-policy",
+    "relUrl": "/course_policy/#grading-policy"
+  },"23": {
+    "doc": "Course Policy",
+    "title": "Grade distribution",
+    "content": "| Component | Weightage | . | Final Exam | 30% | . | Mid-term Quiz | 15% | . | Quizzes | 15% | . | Mini Projects | 20% | . | Course Project | 20% | . | In-class activities/Bonus | 5% | . Please also note that any bonus points will be added to the final course total rather than to individual components. A student can get a maximum of 5% bonus points in the course. Note: The course instructor reserves the right to make minor modifications to the above distribution based on the progress of the course. ",
+    "url": "/course_policy/#grade-distribution",
+    "relUrl": "/course_policy/#grade-distribution"
+  },"24": {
+    "doc": "Home",
+    "title": "Home",
+    "content": " ",
+    "url": "/home/",
+    "relUrl": "/home/"
+  },"25": {
+    "doc": "Home",
+    "title": "About",
+    "content": "This course will provide an overview of the principles and foundations of modern operating systems and networking principles. The course is structured into three parts where each part focusses on different aspects of the operating systems as well as the networking. ",
+    "url": "/home/#about",
+    "relUrl": "/home/#about"
+  },"26": {
+    "doc": "Home",
+    "title": "Lecture hours",
+    "content": "The lectures will be in-person and will held on every Tuesday and Friday 10:05 AM to 11:30 AM in Room no: H-105. The lecture materials (slides, lecture notes if any and links to supporting resources) can be accessed here. ",
+    "url": "/home/#lecture-hours",
+    "relUrl": "/home/#lecture-hours"
+  },"27": {
+    "doc": "Home",
+    "title": "Office Hours",
+    "content": "Every Thursday 05:30 PM to 06:00 PM and Tuesday 5:00 PM to 5:30 PM (Office: SERC, Room number: 509). Apart from this if more meetings or help is required, feel free to drop in an email to one of the teaching assistants . ",
+    "url": "/home/#office-hours",
+    "relUrl": "/home/#office-hours"
+  },"28": {
+    "doc": "Home",
+    "title": "Resources",
+    "content": "Reference Books: . | Operating systems: Three easy pieces by Andrea Arpaci-Dusseau and Remzi Arpaci-Dusseau, 2018 (https://pages.cs.wisc.edu/~remzi/OSTEP/) | Computer Networks (5th Edition) Andrew S. Tanenbaum, David J. Wetherall, Prentice-Hall, 2013 | Wlliam Stallings, Operating Systems, 9th Edition, Pearson, 2018. | Tanenbaum, A. S. &amp; Bos, H. (2014), Modern Operating Systems , Pearson , Boston, MA . | . Useful tools: . | Xv6 - This course will use XV6 operating system to teach the concepts. Instructions on how to set up XV6 and courses can be found here . | C Programming - We will be using C for writing many low level user programs and system calls. Any open source editor like Vim, Atom or even sublime Text would suffice. For any IDE, tools like Visual Studio would serve the purpose and it is highly recommended. | . ",
+    "url": "/home/#resources",
+    "relUrl": "/home/#resources"
+  },"29": {
+    "doc": "Home",
+    "title": "Assignments and Projects",
+    "content": "All the assignments, their grading policy will be posted on this website. ",
+    "url": "/home/#assignments-and-projects",
+    "relUrl": "/home/#assignments-and-projects"
+  },"30": {
+    "doc": "CS3.301 Operating Systems and Networks",
+    "title": "Operating Systems and Networks",
+    "content": "Welcome to the course website of CS3.301 Operating Systems and Networks. The details of syllabus, course plan, examinations can be found in the home page. Further details regarding the course can be found below: . | a course calendar with materials, | a staff page, | and a weekly schedule. | List of lectures with additional content | . ",
+    "url": "/index.html#operating-systems-and-networks",
+    "relUrl": "/index.html#operating-systems-and-networks"
+  },"31": {
+    "doc": "CS3.301 Operating Systems and Networks",
+    "title": "CS3.301 Operating Systems and Networks",
+    "content": " ",
+    "url": "/index.html",
+    "relUrl": "/index.html"
+  },"32": {
+    "doc": "Lectures",
+    "title": "Lectures",
+    "content": " ",
+    "url": "/lectures/",
+    "relUrl": "/lectures/"
+  },"33": {
+    "doc": "Mini Project 1",
+    "title": "Before You Start",
+    "content": " ",
+    "url": "/mini-projects/mini-project1#before-you-start",
+    "relUrl": "/mini-projects/mini-project1#before-you-start"
+  },"34": {
+    "doc": "Mini Project 1",
+    "title": "Deadline",
+    "content": "The deadline for this assignment is Thursday, September 11, 2025 23:59:59 IST. ",
+    "url": "/mini-projects/mini-project1#deadline",
+    "relUrl": "/mini-projects/mini-project1#deadline"
+  },"35": {
+    "doc": "Mini Project 1",
+    "title": "Grading",
+    "content": "Marks are divided into 2 categories . | I/O Evaluation . | This component will be automatically evaluated. | Your shell will be tested on a common testing environment. | This will be done in a similar manner to how OJ worked in CPro and DSA. | . | Code Evaluation . | This component will be manually evaluated. | Your code and understanding will be evaluated by TAs during an in-person viva. | . | . If you are using LLMs for any portion of the code, . | Enclose the LLM generated portion as below, ############## LLM Generated Code Begins ############## some llm generated code ############## LLM Generated Code Ends ################ . | Provide the exact prompts and LLM responses as image files in a folder called llm_completions/ | . ",
+    "url": "/mini-projects/mini-project1#grading",
+    "relUrl": "/mini-projects/mini-project1#grading"
+  },"36": {
+    "doc": "Mini Project 1",
+    "title": "Notes Regarding Grading",
+    "content": ". | In the in-person code evaluation, you will be tested solely on the understanding of your code. | The exact weightage will be released shortly, but note that the in-person code evaluation will hold more weightage than the automated evaluation. | Since evaluation of the correctness of your code will be automatically evaluated, you must ensure that your shell strictly follows the input and output requirements mentioned in this document. | Failure to follow input/output formats will likely lead to a score of zero in the automatic evaluation. No queries will be entertained. | A sample testing script will be released shortly that will contain sample test cases that you may use to check whether your shell follows the specified input/output format. Note that these test cases are a small subset of the ones used in the automatic evaluation. | . ",
+    "url": "/mini-projects/mini-project1#notes-regarding-grading",
+    "relUrl": "/mini-projects/mini-project1#notes-regarding-grading"
+  },"37": {
+    "doc": "Mini Project 1",
+    "title": "Notes Regarding Queries",
+    "content": ". | Before asking a doubt please thoroughly read through the requirements. | If a doubt is already answered by the requirements, it will not be answered. | You may only ask doubts regarding input/output formats. | For all other doubts, make reasonable assumptions. | . ",
+    "url": "/mini-projects/mini-project1#notes-regarding-queries",
+    "relUrl": "/mini-projects/mini-project1#notes-regarding-queries"
+  },"38": {
+    "doc": "Mini Project 1",
+    "title": "C Shell [Total: 645]",
+    "content": " ",
+    "url": "/mini-projects/mini-project1#c-shell-total-645",
+    "relUrl": "/mini-projects/mini-project1#c-shell-total-645"
+  },"39": {
+    "doc": "Mini Project 1",
+    "title": "General Requirements",
+    "content": ". | The project must be broken down into multiple .c and .h files based on functionality. Monolithic code in a single file will be heavily penalized. | You may only use the C POSIX library headers and functions. The documentation for these are provided here - https://pubs.opengroup.org/onlinepubs/9699919799/idx/head.html. | Use the below gcc feature flags while compiling to ensure POSIX compliance. gcc -std=c99 \\ -D_POSIX_C_SOURCE=200809L \\ -D_XOPEN_SOURCE=700 \\ -Wall -Wextra -Werror \\ -Wno-unused-parameter \\ -fno-asm \\ your_file.c . | Your final code submission must be compilable using the command make all in the root directory of the git repository. It must compile the shell to the file shell.out. If not done, this would cause automatic evaluation to fail, leading to zero marks. A test script will be provided soon. This binary should be created in the shell directory, and not the project root. | . ",
+    "url": "/mini-projects/mini-project1#general-requirements",
+    "relUrl": "/mini-projects/mini-project1#general-requirements"
+  },"40": {
+    "doc": "Mini Project 1",
+    "title": "Part A: Shell Input [Total: 65]",
+    "content": "This is the base for the rest of the assignment. Work hard on this! . A.1: The Shell Prompt [10] . Your shell should show a prompt so that the user knows that they can provide input to it. Successfully completing most of this requirement merely requires your shell to display the below prompt! . &lt;Username@SystemName:current_path&gt; . Find out what Username and SystemName are by investigating the bash (or zsh, etc.) prompt that you see in your computer’s shell. Unix only, sorry non-WSL Windows users :( . Requirements . | The shell should display the above prompt when it is not running a foreground process. | The directory in which the shell is started becomes the shell’s home directory. | When the current working directory has the home directory as an ancestor (for example /path/to/home/meow), the absolute path to the home directory must be replaced by a tilde “~”. So the example would be displayed as ~/meow. | When the current working directory does not have the home directory as an ancestor (for example /path/to/not_home/meow) the absolute path should be displayed as is. So the example would be displayed as /path/to/not_home/meow. | . Example . # I am currently running bash [rudy@iiit ~/osnmp1/]$ make [rudy@iiit ~/osnmp1/]$ ./shell.out # I am now running my shell &lt;rudy@iiit:~&gt; . A.2: User Input [5] . A shell’s job is to take input from a user, parse it, and then run any commands if necessary. For now, after taking input from a user, the shell doesn’t have to do anything with the input! So successfully completing this requirement merely requires your shell to be able to take user input! . Requirements . | The shell should allow a user to type input. | When the user presses the enter/return key, the shell should consume the input. | After consuming the input, the shell should once again display the shell prompt. The user should again be able to type input and submit it (by pressing the enter/return key). | . Example . &lt;rudy@iiit:~&gt; Hi there guys! &lt;rudy@iiit:~&gt; This shell is cool! &lt;rudy@iiit:~&gt; . A.3: Input Parsing [50] . After taking user input, the input must be parsed so that we can decide what the user wants the shell to do. You will be implementing a parser for the below Context Free Grammar . shell_cmd -&gt; cmd_group ((&amp; | ;) cmd_group)* &amp;? cmd_group -&gt; atomic (\\| atomic)* atomic -&gt; name (name | input | output)* input -&gt; &lt; name | &lt;name output -&gt; &gt; name | &gt;name | &gt;&gt; name | &gt;&gt;name name -&gt; r\"[^|&amp;&gt;&lt;;]+\" . Below is another version of the same grammar, but provided in a pure regex format. This is to clarify that in the above grammar, anywhere there is a space, you must handle an arbitrary amount of whitespace. Note the usage of ‘*’ and ‘+’. shell_cmd -&gt; r\"(?P&lt;cmd_group1&gt;.+)(?P&lt;WS1&gt;\\s*)((&amp;|;)(?P&lt;WS2&gt;\\s*)(?P&lt;cmd_group2&gt;.+))*(?P&lt;WS3&gt;\\s*)&amp;?\" cmd_group -&gt; r\"(?P&lt;atomic1&gt;.+)(?P&lt;WS1&gt;\\s*)(\\|(?P&lt;WS2&gt;\\s*)(?P&lt;atomic2&gt;.+))*\" atomic -&gt; r\"(?P&lt;NAME1&gt;[^|&amp;&gt;&lt;;]+)(?P&lt;WS1&gt;\\s+)((?P&lt;NAME2&gt;[^|&amp;&gt;&lt;;]+)|(?P&lt;input&gt;.+)|(?P&lt;output&gt;.+))*\" input -&gt; r\"&lt;(?P&lt;WS&gt;\\s*)(?P&lt;NAME&gt;[^|&amp;&gt;&lt;;]+)\" output -&gt; r\"(&gt;|&gt;&gt;)(?P&lt;WS&gt;\\s*)(?P&lt;NAME&gt;[^|&amp;&gt;&lt;;]+)\" . Instead of attempting to understand any of these regexes, I highly recommend copying the regex (the text between the double quotes) and pasting it into Regex101. Ensure that you select the flavor to be ‘Python’ and that you disable the ‘global’ and ‘multiline’ options which are auto enabled in the ‘Regex Flags’ menu. An explanation for the provided regex can be seen on the right hand side. A simple introduction to Context Free Grammars and an example parser for a simpler grammar will be provided in the tutorial. Parsers for such programs usually create something called an Abstract Syntax Tree. However, you are not required to parse the input into an AST. You can use any structure that you find the most convenient! . Requirements . | The shell should verify whether or not an inputted command is valid or invalid using the rules of the grammar. | If a command is valid, do nothing (for now)! For example, cat meow.txt | meow; meow &gt; meow.txt &amp; is a valid command. | If a command is invalid, print “Invalid Syntax!”. For example, cat meow.txt | ; meow is an invalid command. | Your parser should ignore whitespace characters (space, tab (\\t), new line (\\n), and carriage return (\\r)) in between valid tokens. | . Example . # This is valid syntax &lt;rudy@iiit:~&gt; Hi there guys! # This isn't &lt;rudy@iiit:~&gt; cat meow.txt | ; meow Invalid Syntax! &lt;rudy@iiit:~&gt; . ",
+    "url": "/mini-projects/mini-project1#part-a-shell-input-total-65",
+    "relUrl": "/mini-projects/mini-project1#part-a-shell-input-total-65"
+  },"41": {
+    "doc": "Mini Project 1",
+    "title": "Part B: Shell Intrinsics [Total: 70]",
+    "content": "These are commands that any shell worth its salt supports! Implementing them shouldn’t be too difficult. Banned Syscalls for Part B: exec*, i.e. any of the syscalls whose names start with exec. B.1: hop [20] . Syntax: hop ((~ | . | .. | - | name)*)? . Purpose: The hop command allows a user to change the shell’s current working directory. Requirements . Execute one of the following operations sequentially for each passed argument: . | ”~” or No Arguments: Change the CWD to the shell’s home directory. | ”.”: Do nothing (i.e. stay in the same CWD) | ”..”: Change the CWD to the parent directory of the CWD, or do nothing if the CWD has no parent directory. | ”-“: Change the CWD to the previous CWD or do nothing if there was no previous CWD. So, after starting the shell, till the first hop command which was not a “-“ was run, you must do nothing. | “name”: Change the CWD to the specified relative or absolute path. | If the directory does not exist, output “No such directory!” | . Example . &lt;rudy@iiit:~/osnmp1&gt; hop ~ &lt;rudy@iiit:~&gt; hop .. &lt;rudy@iiit:/home/&gt; hop rudy/osnmp1 .. - &lt;rudy@iiit:~/osnmp1&gt; . B.2: reveal [20] . Syntax: reveal (-(a | l)*)* (~ | . |.. | - | name)? . Purpose: The reveal command allows a user to view the files and directories in a directory. Requirements . Flags modify the default behavior of reveal. | “a”: When this flag is set, reveal all files and directories, including hidden ones (files and directories starting with .). The default behavior is to not reveal hidden files and directories. | “l”: When this flag is set, reveal files and directories in a line by line format, i.e. only one entry per line. | When both flags are set, all files and directories, including hidden ones, must be printed in the line by line format. | When neither flag is set, print files and directories in the format of ls. | The argument passed invokes identical behavior to hop, except that here we are listing directory contents instead of changing the CWD. | Ensure that the files are always listed in lexicographic order. Note that you are not required to implement the format of ls -l. (In fact if you do you may lose marks due to the automated evaluation!) Further note that here you must use the ASCII values of the characters to sort the names lexicographically. | If the directory does not exist, output “No such directory!” | . Example . &lt;rudy@iiit:~&gt; reveal ~ osnmp1 &lt;rudy@iiit:~&gt; hop .. &lt;rudy@iiit:/home&gt; reveal rudy &lt;rudy@iiit:/home&gt; hop rudy/osnmp1 &lt;rudy@iiit:~/osnmp1&gt; reveal -la .git .gitignore include llm_completions src shell.out Makefile README.md &lt;rudy@iiit:~/osnmp1&gt; reveal -lalalalaaaalal -lalala -al .git .gitignore include llm_completions src shell.out Makefile README.md &lt;rudy@iiit:~/osnmp1&gt; reveal -aaaaaaa -a .git .gitignore include llm_completions src shell.out Makefile README.md . B.3: log [30] . Syntax: log (purge | execute &lt;index&gt;)? . Purpose: The log command allows a user to view their recently executed commands. Requirements . | The stored list of commands must persist across shell sessions. | Store a maximum of 15 commands. Overwrite the oldest command. | Do not store a command if it is identical to the previously executed command in the log. Here identical can mean syntactically or exactly. Take it to mean exactly. | Always store the entire shell_cmd as defined in the CFG. | Do not store any shell_cmd if the command name of an atomic command is log itself. | The command exhibits three behaviors: . | No arguments: Print the stored commands in order of oldest to newest. | purge: Clear the history. | execute &lt;index&gt;: Execute the command at the given index (one-indexed, indexed in order of newest to oldest). Do not store the executed command. | . | . EDIT - I recommend implementing this command after implementing part C.1. Example . &lt;rudy@iiit:~&gt; reveal ~ osnmp1 &lt;rudy@iiit:~&gt; hop .. &lt;rudy@iiit:/home/rudy&gt; reveal osnmp1 &lt;rudy@iiit:/home/rudy&gt; hop &lt;rudy@iiit:~&gt; log reveal ~ hop .. reveal hop &lt;rudy@iiit:~&gt; log execute 2 osnmp1 &lt;rudy@iiit:~&gt; log reveal ~ hop .. reveal hop &lt;rudy@iiit:~&gt; log purge &lt;rudy@iiit:~&gt; log &lt;rudy@iiit:~&gt; . ",
+    "url": "/mini-projects/mini-project1#part-b-shell-intrinsics-total-70",
+    "relUrl": "/mini-projects/mini-project1#part-b-shell-intrinsics-total-70"
+  },"42": {
+    "doc": "Mini Project 1",
+    "title": "Part C: File Redirection and Pipes [Total: 200]",
+    "content": "For this part, you will implement I/O redirection and command piping. When processing commands with sequential (;) or background (&amp;, &amp;&amp;) operators, you should only execute the first cmd_group and ignore the rest for now. C.1: Command Execution . This part was implicitly required, and has just been added explicitly for clarity. You must allow the execution of arbitrary comands. This includes commands like cat, echo, sleep, etc. C.2: Input Redirection [50] . Syntax: command &lt; filename . Purpose: The input redirection operator allows a command to read its standard input from a file instead of the terminal. Requirements . | The shell must open the specified file for reading using the open() system call with O_RDONLY flag. | If the file does not exist or cannot be opened, the shell must print “No such file or directory” and not execute the command. | The shell must redirect the command’s standard input (STDIN_FILENO) to the opened file using dup2(). | The shell must close the original file descriptor after duplication to avoid file descriptor leaks. | When multiple input redirections are present (e.g., command &lt; file1 &lt; file2), only the last one must take effect. | . C.3: Output Redirection [50] . Syntax: command &gt; filename or command &gt;&gt; filename . Purpose: The output redirection operators allow a command to write its standard output to a file instead of the terminal. Requirements . | For &gt;, the shell must create a new file (wipe it if it already exists) and open it for writing. | For &gt;&gt;, the shell must append to the passed file (or create if it doesn’t exist) and open it for appending. | When multiple output redirections are present (e.g., command &gt; file1 &gt; file2), only the last one must take effect. | Input and output redirection must work together (e.g., command &lt; input.txt &gt; output.txt). | . C.4: Command Piping [100] . Syntax: command1 | command2 | ... | commandN . Purpose: The pipe operator allows the standard output of one command to be connected to the standard input of the next command. Requirements . | The shell must create pipes using the pipe() system call for each | operator in the command. | For each command in the pipeline, the shell must fork a child process. | The shell must redirect the standard output of command[i] to the write end of pipe[i]. | The shell must redirect the standard input of command[i+1] to the read end of pipe[i]. | The parent shell must wait for all commands in the pipeline to complete. | A piped command sequence is considered finished only when all processes in the pipeline have exited. | If any command in the pipeline fails to execute, the pipeline must still attempt to run the remaining commands. | File redirection and pipes must work together (e.g., command1 &lt; input.txt | command2 &gt; output.txt). | . ",
+    "url": "/mini-projects/mini-project1#part-c-file-redirection-and-pipes-total-200",
+    "relUrl": "/mini-projects/mini-project1#part-c-file-redirection-and-pipes-total-200"
+  },"43": {
+    "doc": "Mini Project 1",
+    "title": "Part D: Sequential and Background Execution [Total: 200]",
+    "content": "D.1: Sequential Execution [100] . Syntax: command1 ; command2 ; ... ; commandN . Purpose: The semicolon operator allows multiple commands to be executed one after another. Requirements . | The shell must execute each command in the order they appear. | The shell must wait for each command to complete before starting the next. | If a command fails to execute, the shell must continue executing the subsequent commands. | Each command in the sequence must be treated as a complete shell_cmd as defined in the grammar. | The shell prompt must only be displayed after all commands in the sequence have finished executing. | . D.2: Background Execution [100] . Syntax: command &amp; . Purpose: The ampersand operator allows a command to run in the background while the shell continues to accept new commands. Requirements . | When a command ends with &amp;, the shell must fork a child process but not wait for it to complete. | The shell must print the background job number and process ID in the format: [job_number] process_id | The shell must immediately display a new prompt after launching the background process. | After an user inputs, before parsing the input, the shell must check for completed background processes. | When a background process completes successfully, the shell must print: command_name with pid process_id exited normally | When a background process exits abnormally, the shell must print: command_name with pid process_id exited abnormally | Background processes must not have access to the terminal for input. | If a background command in a sequence is followed by more commands (e.g., cmd1 &amp; cmd2), only cmd1 runs in the background. | . ",
+    "url": "/mini-projects/mini-project1#part-d-sequential-and-background-execution-total-200",
+    "relUrl": "/mini-projects/mini-project1#part-d-sequential-and-background-execution-total-200"
+  },"44": {
+    "doc": "Mini Project 1",
+    "title": "Part E: Exotic Shell Intrinsics [Total: 110]",
+    "content": "E.1: activities [20] . Syntax: activities . Purpose: The activities command lists all processes spawned by the shell that are still running or stopped. Requirements . | The command must display each process in the format: [pid] : command_name - State | The command must sort the output lexicographically by command name before printing. | The command must remove processes from the list once they have terminated. | Running processes must show state as “Running” and stopped processes as “Stopped”. | . E.2: ping [20] . Syntax: ping &lt;pid&gt; &lt;signal_number&gt; . Purpose: The ping command sends a signal to a process with the specified PID. Requirements . | The command must take the signal number modulo 32 before sending: actual_signal = signal_number % 32 | If the process does not exist, the command must print “No such process found” | On successful signal delivery, the command must print “Sent signal signal_number to process with pid &lt;pid&gt;” | . E.3: Ctrl-C, Ctrl-D and Ctrl-Z [30] . Purpose: These keyboard shortcuts provide job control functionality. Requirements for Ctrl-C (SIGINT): . | The shell must install a signal handler for SIGINT. | The handler must send SIGINT to the current foreground child process group if one exists. | The shell itself must not terminate on Ctrl-C. | . Requirements for Ctrl-D (EOF): . | The shell must detect the EOF condition. | The shell must send SIGKILL to all child processes. | The shell must exit with status 0. | The shell must print “logout” before exiting. | . Requirements for Ctrl-Z (SIGTSTP): . | The shell must install a signal handler for SIGTSTP. | The handler must send SIGTSTP to the current foreground child process group if one exists. | The shell must move the stopped process to the background process list with status “Stopped”. | The shell must print: [job_number] Stopped command_name | The shell itself must not stop on Ctrl-Z. | . E.4: fg and bg [40] . Syntax: fg [job_number] and bg [job_number] . Purpose: The fg and bg commands control background and stopped jobs. Requirements for fg command: . | The command must bring a background or stopped job to the foreground. | If the job is stopped, the command must send SIGCONT to resume it. | The shell must wait for the job to complete or stop again. | If no job number is provided, the command must use the most recently created background/stopped job. | If the job number doesn’t exist, the command must print “No such job” | The command must print the entire command when bringing it to foreground. | . Requirements for bg command: . | The command must resume a stopped background job by sending SIGCONT. | The job must continue running in the background after receiving the signal. | The command must print [job_number] command_name &amp; when resuming. | If the job is already running, the command must print “Job already running” | If the job number doesn’t exist, the command must print “No such job” | Only stopped jobs can be resumed with bg; running jobs must produce “Job already running” | . ",
+    "url": "/mini-projects/mini-project1#part-e-exotic-shell-intrinsics-total-110",
+    "relUrl": "/mini-projects/mini-project1#part-e-exotic-shell-intrinsics-total-110"
+  },"45": {
+    "doc": "Mini Project 1",
+    "title": "Networking [Total 80]",
+    "content": "Objective: In this part of the mini-project you will be building upon the the unreliable UDP protocol to improve upon its reliability and you will be simulating several core TCP functionalities from scratch. This section is designed to make you familiar with socket programming, TCP and UDP protocols, supporting both file transfer and real-time chat. 1. Core Functionalities . 1.1 S.H.A.M. Packet Structure [5] . All communication must occur via UDP datagrams. The payload of each datagram will be a S.H.A.M. packet, which you must define using a struct. This header must precede any application data. // Recommended S.H.A.M. Header Structure struct sham_header { uint32_t seq_num; // Sequence Number uint32_t ack_num; // Acknowledgment Number uint16_t flags; // Control flags (SYN, ACK, FIN) uint16_t window_size; // Flow control window size }; . | Sequence Number (seq_num): A 32-bit field indicating the byte-stream number of the first byte in this packet’s data segment. | Acknowledgment Number (ack_num): A 32-bit field that contains the value of the next sequence number the sender of the ACK is expecting to receive. This will be a cumulative acknowledgment. | Flags (flags): A 16-bit field for connection management. You must implement: . | SYN (Synchronise): 0x1 - Used to initiate a connection. | ACK (Acknowledge): 0x2 - Indicates the ack_num field is significant. | FIN (Finish): 0x4 - Used to terminate a connection. | Window Size (window_size): A 16-bit field for flow control. It specifies the number of data bytes the sender of this packet is willing to accept. | . 1.2 Connection Management [10] . Your protocol must establish and terminate connections gracefully. | Three-Way Handshake (Establishment): | . | Client -&gt; Server: Sends a packet with the SYN flag set and an initial sequence number X. | Server -&gt; Client: Responds with a packet where both SYN and ACK flags are set. It uses its own initial sequence number Y and acknowledges the client with ack_num = X + 1. | Client -&gt; Server: Completes the handshake by sending a packet with the ACK flag set and ack_num = Y + 1. The connection is now established. | . | Four-Way Handshake (Termination): | . | Initiator -&gt; Other Side: Sends a FIN packet. | Other Side -&gt; Initiator: Responds with an ACK. | Other Side -&gt; Initiator: Once it’s ready to close, sends its own FIN. | Initiator -&gt; Other Side: Responds with a final ACK. | . 1.3 Data Sequencing and Retransmission[25] . | Data Segmentation: The sender must read a file (or user input) and break it into fixed-size chunks (1024 bytes). Each chunk is the payload for a S.H.A.M. packet. | Sliding Window: The sender can transmit multiple packets without waiting for an acknowledgment for each one. The number of unacknowledged packets in flight must not exceed a fixed window size (this is different from the window_size and is fixed e.g., 10 packets ). | Cumulative ACKs: The receiver should send an ACK for the highest in-order sequence number received. For example, if packets 1, 2, and 4 arrive, the receiver sends ACK for sequence 3 (since it’s expecting packet 3 next). It should buffer packet 4. | Retransmission Timeout (RTO): The sender must maintain a timer for each packet sent. If an ACK for a given packet is not received within a timeout period (e.g., 500ms), the packet must be retransmitted. | . Example 1: Basic Retransmission Scenario . This example demonstrates how the system recovers when a single packet is lost. Scenario Assumptions: . | Sender’s Sliding Window: 4 packets | Packet Data Size: 1024 bytes | Sequence Numbers (SEQ): Byte-based | . Step 1: Initial Transmission . The sender transmits a window of four packets and starts a timer for each one. | SND DATA SEQ=1 | SND DATA SEQ=1025 &lt;– This packet is lost | SND DATA SEQ=2049 | SND DATA SEQ=3073 | . Step 2: Receiver’s Cumulative ACK . The receiver gets packets 1, 3, and 4. Since packet 2 (SEQ=1025) is missing, it can only acknowledge the data it has received contiguously. It buffers packets 3 and 4. | It sends an ACK for the next byte it expects: RCV sends: ACK=1025 | . Step 3: Timeout and Selective Retransmission ⏳ . The sender’s timer for packet 2 (SEQ=1025) expires. It assumes the packet was lost and retransmits only that packet. | TIMEOUT SEQ=1025 | RETX DATA SEQ=1025 | . Step 4: Recovery and Final ACK . The receiver gets the retransmitted packet 2. It can now process its buffered packets (3 and 4), completing the sequence up to byte 4096. | It sends a new cumulative ACK for the entire block: RCV sends: ACK=4097 | . Example 2: The Efficiency of Cumulative ACKs . This section addresses a common question about the previous scenario. Question: After retransmitting packet 2, does the sender also need to retransmit packets 3 and 4? . Answer: No. The sender does not retransmit packets 3 and 4. Explanation: The final ACK=4097 sent by the receiver is a cumulative acknowledgment. This single message efficiently informs the sender of two things: . | “I have successfully received all data up to and including byte 4096.” | “I am now ready for the next piece of data, which starts at byte 4097.” | . When the sender receives this ACK, it knows that the retransmitted packet 2, as well as the originally sent packets 3 and 4, have all been successfully received. It can then cancel any running timers for those packets and continue sending new data. This prevents unnecessary retransmissions and makes the protocol highly efficient. 2. Flow Control[10] . You must implement a basic sliding window flow control mechanism. | The receiver must always include its current available buffer space (in bytes) in the window_size field of every packet it sends. | The sender must read this window_size from incoming ACK packets. | The sender must ensure that the amount of unacknowledged data it has in flight (LastByteSent - LastByteAcked) is always less than or equal to the receiver’s advertised window_size. | . 3. Implementation and Testing Requirements . To enable quick and automated testing, your programs must adhere to the following specifications. 3.1 Command-Line Interface . Your client and server must be executable with the following arguments, supporting two modes of operation. | Server: | ./server &lt;port&gt; [--chat] [loss_rate] . | Client: | . File Transfer Mode (Default) ./client &lt;server_ip&gt; &lt;server_port&gt; &lt;input_file&gt; &lt;output_file_name&gt; [loss_rate] . Chat Mode ./client &lt;server_ip&gt; &lt;server_port&gt; --chat [loss_rate] . | --chat: An optional flag to activate Chat Mode. When used, all file-related arguments are ignored. | [loss_rate]: An optional floating-point value between 0.0 and 1.0 indicating the packet loss probability. If not provided, it defaults to 0.0. | . 3.2 Mode-Specific Behavior [10] . | File Transfer Mode (Default): After the handshake, the client sends the specified file to the server. The server receives and saves the file. This is the behavior if the --chat flag is not present. | Chat Mode (--chat): After the handshake, both client and server enter a loop to handle concurrent input from the keyboard (stdin) and the network socket. Typing /quit in the chat should initiate the 4-way FIN handshake to terminate the connection. | Hint: Use the select() system call to monitor both stdin (file descriptor 0) and your socket to handle I/O without threads. | . 3.3 Standardized Output for Verification [5] . This requirement applies to File Transfer Mode only. Upon successfully receiving the entire file and closing the connection, the server must perform two actions: . | Calculate the MD5 checksum of the received file. | Print the result to stdout in the following exact format: | . MD5: &lt;32-character_lowercase_md5_hash&gt; . Linux . Step1: Install the library . | In your terminal, run the following command to update your package lists and install the required package (libssl-dev): . sudo apt update &amp;&amp; sudo apt install libssl-dev . | . Step 2: Compile Your Code Correctly . Once the library is installed, you can compile your code. You do not need the special -I and -L flags that were required for macOS. | Use this simple command template to compile your program. Replace your_program.c and -o your_program with your actual filenames. gcc your_program.c -o your_program -lcrypto . | . MacOS . Step 1: Install the OpenSSL Library . Now, use Homebrew to install the OpenSSL library. It’s a simple, one-line command. | In your Terminal, run: . brew install openssl . | . Step 2: Compile Your Code Correctly . Because Homebrew installs OpenSSL in a special location, you can’t just use a simple gcc command. You must include special flags to tell the compiler where to find the OpenSSL files. | Use this specific command template to compile your program. Replace your_program.c and -o your_program with your actual filenames. gcc your_program.c -o your_program -I$(brew --prefix openssl)/include -L$(brew --prefix openssl)/lib -lcrypto . | . 3.4 Simulating Packet Loss for Testing [5] . This requirement applies to both modes. The receiver must programmatically drop incoming data packets based on the optional loss_rate command-line argument to test retransmission logic. 4. Verbose Logging for Evaluation [10] . To allow the evaluator to verify the internal mechanics of your protocol, you must implement a verbose logging mode that writes metadata about key events, prefixed with a high-precision timestamp, to a dedicated log file. | Activation: The logging mode must be activated by setting an environment variable RUDP_LOG=1. If this variable is not set, no log file should be created or written to. | Log File Naming: The log file must be named according to the program’s role: | Server: server_log.txt | Client: client_log.txt | Log Line Format: Each line in the log file must start with a timestamp in [YYYY-MM-DD HH:MM:SS.microseconds] format, followed by the [LOG] prefix and the event descriptiion. | . Implementation Note: . To get microsecond-level precision for your timestamps, you cannot use the standard time() function. You should use gettimeofday() from &lt;sys/time.h&gt;. #include &lt;stdio.h&gt; #include &lt;sys/time.h&gt; #include &lt;time.h&gt; // Inside your logging function char time_buffer[30]; struct timeval tv; time_t curtime; gettimeofday(&amp;tv, NULL); curtime = tv.tv_sec; // Format the time part strftime(time_buffer, 30, \"%Y-%m-%d %H:%M:%S\", localtime(&amp;curtime)); // Add microseconds and print to the log file fprintf(log_file, \"[%s.%06ld] [LOG] Your message here\\n\", time_buffer, tv.tv_usec); . Required Log Events: . Your implementation must write a timestamped log message to the designated log file for each of the following events when logging is active: . | Connection Handshake: | . | [timestamp] [LOG] SND SYN SEQ=&lt;num&gt; . | [timestamp] [LOG] RCV SYN SEQ=&lt;num&gt; . | [timestamp] [LOG] SND SYN-ACK SEQ=&lt;num&gt; ACK=&lt;num&gt; . | [timestamp] [LOG] RCV ACK FOR SYN . | . | Data Transmission: | . | [timestamp] [LOG] SND DATA SEQ=&lt;num&gt; LEN=&lt;bytes&gt; . | [timestamp] [LOG] RCV DATA SEQ=&lt;num&gt; LEN=&lt;bytes&gt; . | . | Acknowledgments: | . | [timestamp] [LOG] SND ACK=&lt;num&gt; WIN=&lt;window_size&gt; . | [timestamp] [LOG] RCV ACK=&lt;num&gt; . | . | Retransmission: | . | [timestamp] [LOG] TIMEOUT SEQ=&lt;num&gt; . | [timestamp] [LOG] RETX DATA SEQ=&lt;num&gt; LEN=&lt;bytes&gt; . | . | Flow Control: | . | [timestamp] [LOG] FLOW WIN UPDATE=&lt;new_window_size&gt; | . | Simulated Packet Loss: | . | [timestamp] [LOG] DROP DATA SEQ=&lt;num&gt; | . Example Log File Content (server_log.txt) . Here is a sample of what we expect to see inside the server_log.txt file. The program’s standard output (stdout) should still only contain the final MD5: line. [2025-08-03 17:38:15.123456] [LOG] RCV SYN SEQ=100 [2025-08-03 17:38:15.123589] [LOG] SND SYN-ACK SEQ=5000 ACK=101 [2025-08-03 17:38:15.124821] [LOG] RCV ACK FOR SYN [2025-08-03 17:38:15.125111] [LOG] RCV DATA SEQ=101 LEN=1024 [2025-08-03 17:38:15.125185] [LOG] SND ACK=1125 WIN=8192 [2025-08-03 17:38:15.626234] [LOG] TIMEOUT SEQ=1125 [2025-08-03 17:38:15.626301] [LOG] RETX DATA SEQ=1125 LEN=1024 [2025-08-03 17:38:15.628991] [LOG] RCV ACK=2149 [2025-08-03 17:38:16.010101] [LOG] RCV FIN SEQ=4197 [2025--08-03 17:38:16.010182] [LOG] SND ACK FOR FIN [2025-08-03 17:38:16.010250] [LOG] SND FIN SEQ=8500 [2025-08-03 17:38:16.011500] [LOG] RCV ACK=8501 . ",
+    "url": "/mini-projects/mini-project1#networking-total-80",
+    "relUrl": "/mini-projects/mini-project1#networking-total-80"
+  },"46": {
+    "doc": "Mini Project 1",
+    "title": "xv6 [Total Marks - 140]",
+    "content": "Please attend the tutorial on xv6 to understand how to set up and get started with xv6. ",
+    "url": "/mini-projects/mini-project1#xv6-total-marks---140",
+    "relUrl": "/mini-projects/mini-project1#xv6-total-marks---140"
+  },"47": {
+    "doc": "Mini Project 1",
+    "title": "Part A - Basic System Call: getreadcount",
+    "content": "Implement a system call that tracks and returns the total number of bytes read by the read() system call across all processes since boot. Requirements . A.1: System Call Implementation . | Implement sys_getreadcount() that returns the current number of bytes read by the read() syscall. | Handle overflow by wrapping around to 0. | . A.2: User Program . Create a user program readcount.c that: . | Calls getreadcount() and prints the initial value | Reads 100 bytes from a file | Calls getreadcount() again and verifies the increase | . ",
+    "url": "/mini-projects/mini-project1#part-a---basic-system-call-getreadcount",
+    "relUrl": "/mini-projects/mini-project1#part-a---basic-system-call-getreadcount"
+  },"48": {
+    "doc": "Mini Project 1",
+    "title": "Part B - Completely Fair Scheduler",
+    "content": "You need to implement a simplified version of the Completely Fair Scheduler (CFS) in xv6. The CFS is designed to provide fair CPU time distribution among processes. Background . The default scheduling policy in xv6 is round-robin-based. In this task, you’ll implement two other scheduling policies and incorporate them in xv6. The kernel should only use one scheduling policy declared at compile time, with a default of round robin in case none are specified. Modify the makefile to support the SCHEDULER macro to compile the specified scheduling algorithm. Use the flags for compilation:- First Come First Serve: FCFS COmpletely Fair Scheduler: CFS . ",
+    "url": "/mini-projects/mini-project1#part-b---completely-fair-scheduler",
+    "relUrl": "/mini-projects/mini-project1#part-b---completely-fair-scheduler"
+  },"49": {
+    "doc": "Mini Project 1",
+    "title": "First Come First Serve [Marks 20]",
+    "content": "we will modify the xv6 scheduler from strict round-robin to a firstcome-first-server (FCFS) scheduler. This will involve using the creation time entrying in the process control block that was added in part A. We will modify the scheduler function (kernel/proc.c). Scheduler will first have to find a RUNNABLE process with the earliest creation time. The process with the earliest arrival time is the process with the highest priority and therefor the process that is selected for execution. Only when the currently RUNNING process terminates is another process selected to RUN. It is suggested that you comment out the original round-robin scheduler code before adding your new version of the scheduler. Your compilation process should look something like this: make clean; make qemu SCHEDULER=FCFS. Hints: . Use pre-processor directives to declare the alternate scheduling policy in scheduler() in kernel/proc.h. Edit struct proc in kernel/proc.h to add information about a process. Modify the allocproc() function to set up values when the process starts (see kernel/proc.h.) . NOTE procdump: This will be useful for debugging ( refer kernel/proc.c ). It prints a list of processes to the console when a user types Ctrl-P on the console. You can modify this functionality to print the state of the running process and display the other relevant information on the console. Use the procdump function to print the current status of the processes and check whether the processes are scheduled according to your logic. You are free to do any additions to the given file, to test your scheduler. You need to implement a simplified version of the Completely Fair Scheduler (CFS) in xv6. The CFS is designed to provide fair CPU time distribution among processes. Background . The default xv6 scheduler uses a simple round-robin algorithm. Your task is to replace it with a simplified CFS that maintains fairness by tracking how much CPU time each process has received. Your compilation process should look something like this: make clean; make qemu SCHEDULER=CFS. Requirements . B.1: Priority Support [Marks 10] . | Add a nice value for each process. | Calculate the system weight based on nice value: . | Nice 0: weight = 1024 | Nice -20: weight = 88761 (highest priority) | Nice 19: weight = 15 (lowest priority) | Use this approximation: weight = 1024 / (1.25 ^ nice) | . | . B.2: Virtual Runtime Tracking [Marks 20] . | Track the virtual runtime of each process. A processes virtual runtime represents the amount of CPU time a process has consumed, normalized by the system weight. | Initialize vruntime to 0 when a process is created. | Update vruntime by the number of ticks the process runs during each time slice. | . B.2: Scheduling [Marks 50] . | Maintain processes in order of their vruntime (ascending order). | Always schedule the runnable process with the smallest vruntime. | When a process becomes runnable, insert it in the correct position based on vruntime. | . B.3: Time Slice Calculation [Marks 20] . | Define a target latency of 48 ticks. | Calculate a time slice as: time_slice = target_latency / number_of_runnable_processes | Enforce a minimum time slice of 3 ticks. | Each process runs for its calculated time slice before being preempted. | . ",
+    "url": "/mini-projects/mini-project1#first-come-first-serve-marks-20",
+    "relUrl": "/mini-projects/mini-project1#first-come-first-serve-marks-20"
+  },"50": {
+    "doc": "Mini Project 1",
+    "title": "Report [Marks 20]",
+    "content": "In your implementation, add logging to print the vRuntime of all runnable processes before every scheduling decision. The log should clearly indicate: . | Process ID (PID) of each runnable process. | vRuntime value for each process at that moment. | Which process is selected by the scheduler (should be the one with the lowest vRuntime). | . Your log output should allow us to verify that: . | The process with the smallest vRuntime is being chosen by the scheduler. | vRuntime values are updating correctly after each time slice. | . [Scheduler Tick] PID: 3 | vRuntime: 200 PID: 4 | vRuntime: 150 PID: 5 | vRuntime: 180 --&gt; Scheduling PID 4 (lowest vRuntime) . The report also must contain brief explanation about the implementation of the specifications. A few lines about your changes for each spec is fine. Include the performance comparison between the default(Round Robin), FCFS and CFS scheduling policies by showing the average waiting and running times for processes. Set the processes to run on only 1 CPU for this purpose. Use the schedulertest command to get this information. ",
+    "url": "/mini-projects/mini-project1#report-marks-20",
+    "relUrl": "/mini-projects/mini-project1#report-marks-20"
+  },"51": {
+    "doc": "Mini Project 1",
+    "title": "Bonus: Simplified Preemptive MLFQ Scheduler for XV6 (25 Marks)",
+    "content": "Important: This bonus counts towards the overall bonus for the course not particular to this assignment. Queues &amp; Priorities: . Four priority queues: 0 (highest) → 3 (lowest). Time slices: . | Queue 0 → 1 tick . | Queue 1 → 4 ticks . | Queue 2 → 8 ticks . | Queue 3 → 16 ticks . | . Scheduling Rules: . | New Processes: Start in queue 0 (end of queue). | Priority Selection: Always schedule from the highest non-empty queue. If a process is running from a lower queue and a process arrives in a higher queue, preempt the current one at the next tick. | Time Slice Expiry: If a process uses its full time slice, move it to the end of the next lower queue (unless already in queue 3, then keep it there). | Voluntary Yield (I/O bound): On yielding before its slice ends, re-enter at the end of the same queue when ready. | Lowest Priority Queue: Use round-robin scheduling. | Starvation Prevention: Every 48 ticks, move all processes to queue 0 to prevent starvation. | Completed processes should leave the system. | Report: Also if you’ve attempted this section then in the previously mentioned report add comparision for MLFQ as well. | . Notes: . | “Tick” refers to the clock interrupt timer in kernel/trap.c. | Preemption can only occur at tick boundaries. | . mini-project1/ ├── shell/ │ ├── src/ │ ├── include/ │ └── Makefile ├── networking/ │ ├── client.c │ ├── server.c │ ├── sham.h # Or other shared headers │ └── Makefile ├── xv6/ │ ├── xv6_modifications.patch │ ├── readcount.c │ └── report.md # Or report.pdf ├── llm_completions/ # (If you used an LLM for any part) │ ├── shell_prompt_1.png │ ├── networking_q1.png │ └── ... └── README.md . ",
+    "url": "/mini-projects/mini-project1#bonus-simplified-preemptive-mlfq-scheduler-for-xv6-25-marks",
+    "relUrl": "/mini-projects/mini-project1#bonus-simplified-preemptive-mlfq-scheduler-for-xv6-25-marks"
+  },"52": {
+    "doc": "Mini Project 1",
+    "title": "Mini Project 1",
+    "content": " ",
+    "url": "/mini-projects/mini-project1",
+    "relUrl": "/mini-projects/mini-project1"
+  },"53": {
+    "doc": "Mini Projects",
+    "title": "Mini Projects",
+    "content": " ",
+    "url": "/mini-projects/",
+    "relUrl": "/mini-projects/"
+  },"54": {
+    "doc": "PYQs",
+    "title": "PYQs",
+    "content": " ",
+    "url": "/pyqs/",
+    "relUrl": "/pyqs/"
+  },"55": {
+    "doc": "Quiz 1",
+    "title": "Download",
+    "content": ". | Quiz 1 Question Paper (PDF) | . ",
+    "url": "/pyqs/quiz-1/#download",
+    "relUrl": "/pyqs/quiz-1/#download"
+  },"56": {
+    "doc": "Quiz 1",
+    "title": "Quiz 1",
+    "content": " ",
+    "url": "/pyqs/quiz-1/",
+    "relUrl": "/pyqs/quiz-1/"
+  },"57": {
+    "doc": "Staff",
+    "title": "Instructor",
+    "content": "Karthik Vaidhyanathan . karthik.vaidhyanathan@iiit.ac.in . Instructor Hours: . | Thursday: 12:00 PM - 1:00 PM | Location: 509, 5th Floor, SERC, Himalaya Block-D | . Schedule an appointment . ",
+    "url": "/staff/#instructor",
+    "relUrl": "/staff/#instructor"
+  },"58": {
+    "doc": "Staff",
+    "title": "Teaching Assistants",
+    "content": "Akhila Matathammal . akhila.matathammal@research.iiit.ac.in . Let’s explore OSN together . TA Hours: . | TBD | Location: TBD | . Ananya Vishal Halagatti . ananya.halgatti@students.iiit.ac.in . Let’s explore OSN together . TA Hours: . | TBD | Location: TBD | . Anirudh Vempati . anirudh.vempati@students.iiit.ac.in . Let’s explore OSN together . TA Hours: . | TBD | Location: TBD | . Aviral Gupta . aviral.gupta@research.iiit.ac.in . Let’s explore OSN together . TA Hours: . | TBD | Location: TBD | . Divijh Mangtani . divijh.mangtani@research.iiit.ac.in . Let’s explore OSN together . TA Hours: . | TBD | Location: TBD | . Eshaan Sharma . eshaan.sharma@research.iiit.ac.in . Let’s explore OSN together . TA Hours: . | TBD | Location: TBD | . Kriti Gupta . kriti.g@students.iiit.ac.in . Let’s explore OSN together . TA Hours: . | TBD | Location: TBD | . Prakhar Jain . prakhar.jain@research.iiit.ac.in . Let’s explore OSN together . TA Hours: . | TBD | Location: TBD | . Prasoon Dev . prasoon.dev@research.iiit.ac.in . Mail 24 hours prior with your doubt . TA Hours: . | Friday: 16:00-17:00 | Location: iREL, KCIS 2nd Floor | . Miryala Sathvika . miryala.sathvika@research.iiit.ac.in . Let’s explore OSN together . TA Hours: . | Friday: 15:40 - 16:40 | Location: T-Hub 5th floor | . Shlok Sand . shlok.sand@research.iiit.ac.in . Let’s explore OSN together . TA Hours: . | TBD | Location: TBD | . Shubham Goel . shubham.goel@students.iiit.ac.in . Mail 24 hours prior with your doubt . TA Hours: . | Saturday: 14:00-15:00 | Location: CVIT, KCIS 3rd Floor | . Varun Gupta . varun.gup@students.iiit.ac.in . Mail 24 hours prior with your doubt . TA Hours: . | Saturday: 14:00-15:00 | Location: iREL, KCIS 2nd Floor | . ",
+    "url": "/staff/#teaching-assistants",
+    "relUrl": "/staff/#teaching-assistants"
+  },"59": {
+    "doc": "Staff",
+    "title": "Staff",
+    "content": " ",
+    "url": "/staff/",
+    "relUrl": "/staff/"
+  },"60": {
+    "doc": "Tutorial 1 - Introduction to System Calls",
+    "title": "Tutorial - 1 Slides",
+    "content": "Download . ",
+    "url": "/tutorial/tutorial-1#tutorial---1-slides",
+    "relUrl": "/tutorial/tutorial-1#tutorial---1-slides"
+  },"61": {
+    "doc": "Tutorial 1 - Introduction to System Calls",
+    "title": "Tutorial 1 - Introduction to System Calls",
+    "content": " ",
+    "url": "/tutorial/tutorial-1",
+    "relUrl": "/tutorial/tutorial-1"
+  },"62": {
+    "doc": "Tutorial 2 - Networks",
+    "title": "Tutorial - 2 Slides",
+    "content": "Download . Code . ",
+    "url": "/tutorial/tutorial-2#tutorial---2-slides",
+    "relUrl": "/tutorial/tutorial-2#tutorial---2-slides"
+  },"63": {
+    "doc": "Tutorial 2 - Networks",
+    "title": "Tutorial 2 - Networks",
+    "content": " ",
+    "url": "/tutorial/tutorial-2",
+    "relUrl": "/tutorial/tutorial-2"
+  },"64": {
+    "doc": "Tutorial 3 - Basics of xv6 and CFS",
+    "title": "Tutorial - 3 Slides",
+    "content": "CFS Slides . Guide to Debugging XV6 with VSCode . ",
+    "url": "/tutorial/tutorial-3#tutorial---3-slides",
+    "relUrl": "/tutorial/tutorial-3#tutorial---3-slides"
+  },"65": {
+    "doc": "Tutorial 3 - Basics of xv6 and CFS",
+    "title": "Tutorial 3 - Basics of xv6 and CFS",
+    "content": " ",
+    "url": "/tutorial/tutorial-3",
+    "relUrl": "/tutorial/tutorial-3"
+  },"66": {
+    "doc": "Tutorials",
+    "title": "Tutorials",
+    "content": " ",
+    "url": "/tutorial/",
+    "relUrl": "/tutorial/"
+  },"67": {
+    "doc": "Week 1 - Introduction to Course Overview and Process Virtualization",
+    "title": "Introduction and Course Overview",
+    "content": "Course Overview Slides - Download . ",
+    "url": "/lectures/week-1#introduction-and-course-overview",
+    "relUrl": "/lectures/week-1#introduction-and-course-overview"
+  },"68": {
+    "doc": "Week 1 - Introduction to Course Overview and Process Virtualization",
+    "title": "Introduction to Process Virtualization",
+    "content": "Process Virtualization Introduction - Download . ",
+    "url": "/lectures/week-1#introduction-to-process-virtualization",
+    "relUrl": "/lectures/week-1#introduction-to-process-virtualization"
+  },"69": {
+    "doc": "Week 1 - Introduction to Course Overview and Process Virtualization",
+    "title": "Suggested Reading",
+    "content": ". | OSTEP Chapter 2 - Introduction to Operating systems | OSTEP Chapter 4 - The Abstraction the Process | OSTEP Chapter 5 - Interlude: Process API | . ",
+    "url": "/lectures/week-1#suggested-reading",
+    "relUrl": "/lectures/week-1#suggested-reading"
+  },"70": {
+    "doc": "Week 1 - Introduction to Course Overview and Process Virtualization",
+    "title": "Suggested Viewing",
+    "content": ". | AT&amp;T Archives: The UNIX Operating System | . ",
+    "url": "/lectures/week-1#suggested-viewing",
+    "relUrl": "/lectures/week-1#suggested-viewing"
+  },"71": {
+    "doc": "Week 1 - Introduction to Course Overview and Process Virtualization",
+    "title": "Week 1 - Introduction to Course Overview and Process Virtualization",
+    "content": " ",
+    "url": "/lectures/week-1",
+    "relUrl": "/lectures/week-1"
+  },"72": {
+    "doc": "Week 2 - Introduction to Course Overview and Process Virtualization",
+    "title": "Process Virtualization",
+    "content": "API and Mechanisms - Download . Mechanisms and Policies (Part 1) - Download . ",
+    "url": "/lectures/week-2#process-virtualization",
+    "relUrl": "/lectures/week-2#process-virtualization"
+  },"73": {
+    "doc": "Week 2 - Introduction to Course Overview and Process Virtualization",
+    "title": "Suggested Reading",
+    "content": "Mechanisms and Policies (Part 1) - Download . | OSTEP Chapter 5 - Interlude: Process API | OSTEP Chapter 6 - Mechanism: Limited Direct Execution | OSTEP Chapter 7 - Scheduling: Introduction | . ",
+    "url": "/lectures/week-2#suggested-reading",
+    "relUrl": "/lectures/week-2#suggested-reading"
+  },"74": {
+    "doc": "Week 2 - Introduction to Course Overview and Process Virtualization",
+    "title": "Some References",
+    "content": ". | Linux Code repo | . ",
+    "url": "/lectures/week-2#some-references",
+    "relUrl": "/lectures/week-2#some-references"
+  },"75": {
+    "doc": "Week 2 - Introduction to Course Overview and Process Virtualization",
+    "title": "Week 2 - Introduction to Course Overview and Process Virtualization",
+    "content": " ",
+    "url": "/lectures/week-2",
+    "relUrl": "/lectures/week-2"
+  },"76": {
+    "doc": "Week 3 - Proess Virutalization and Introduction to Computer Networks",
+    "title": "Process Virtualization",
+    "content": "Policies (Round Robin and MLFQ) - Download . ",
+    "url": "/lectures/week-3#process-virtualization",
+    "relUrl": "/lectures/week-3#process-virtualization"
+  },"77": {
+    "doc": "Week 3 - Proess Virutalization and Introduction to Computer Networks",
+    "title": "Introduction to Networks",
+    "content": "Networking - Introduction to Networking Layers - Download . ",
+    "url": "/lectures/week-3#introduction-to-networks",
+    "relUrl": "/lectures/week-3#introduction-to-networks"
+  },"78": {
+    "doc": "Week 3 - Proess Virutalization and Introduction to Computer Networks",
+    "title": "Suggested Reading",
+    "content": ". | OSTEP Chapter 8 - Scheduling: The Multi-Level Feedback Queue | OSTEP Chapter 9 - Scheduling Propotional Share | . ",
+    "url": "/lectures/week-3#suggested-reading",
+    "relUrl": "/lectures/week-3#suggested-reading"
+  },"79": {
+    "doc": "Week 3 - Proess Virutalization and Introduction to Computer Networks",
+    "title": "Suggested Viewing",
+    "content": "Computer Networking: A Top-Down Approach 8th edition . ",
+    "url": "/lectures/week-3#suggested-viewing",
+    "relUrl": "/lectures/week-3#suggested-viewing"
+  },"80": {
+    "doc": "Week 3 - Proess Virutalization and Introduction to Computer Networks",
+    "title": "Week 3 - Proess Virutalization and Introduction to Computer Networks",
+    "content": " ",
+    "url": "/lectures/week-3",
+    "relUrl": "/lectures/week-3"
+  },"81": {
+    "doc": "Week 4 - Transport Layer",
+    "title": "Networking - Transport Layer",
+    "content": "Transport Layer and How it Works - Download . ",
+    "url": "/lectures/week-4#networking---transport-layer",
+    "relUrl": "/lectures/week-4#networking---transport-layer"
+  },"82": {
+    "doc": "Week 4 - Transport Layer",
+    "title": "Suggested Viewing",
+    "content": "Computer Networking: A Top-Down Approach 8th edition . ",
+    "url": "/lectures/week-4#suggested-viewing",
+    "relUrl": "/lectures/week-4#suggested-viewing"
+  },"83": {
+    "doc": "Week 4 - Transport Layer",
+    "title": "Week 4 - Transport Layer",
+    "content": " ",
+    "url": "/lectures/week-4",
+    "relUrl": "/lectures/week-4"
+  }
+}
