@@ -12,7 +12,7 @@ Oct 3
 : [Condition Variables](#)
 
 Oct 4
-: **Tutorial 7**{: .label .label-green }
+: **Tutorial 6**{: .label .label-green }
 
 Oct 7
 : [Introduction to Semaphores](#)
