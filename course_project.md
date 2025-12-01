@@ -159,7 +159,7 @@ The system must support the following requirements:
 
 5. **[15] Efficient Search**: The Name Server should implement efficient search algorithms to quickly locate files based on their names or other metadata, minimizing latency in file access operations. Furthermore, caching should be implemented for recent searches to expedite subsequent requests for the same data.
 
-> Note: An approach faster than O(N) time complexity is expected here. Efficient data structures like Tries, Hashmaps, etc. can be used.
+> Note: An approach faster than O(N) time complexity is expected here. Efficient data structures like Trees, Hashmaps, etc. can be used.
 
 ## [10] Specifications
 
